@@ -1,20 +1,10 @@
 'use client'
-import Image from 'next/image'
-import {
-  animate,
-  createScope,
-  createSpring,
-  createDraggable,
-  Scope,
-  svg,
-  stagger,
-} from 'animejs'
-import { useEffect, useRef, useState } from 'react'
+import { animate, createScope, Scope, stagger } from 'animejs'
+import { useEffect, useRef } from 'react'
 
 export default function Home() {
   const root = useRef(null)
   const scope = useRef<Scope | null>(null)
-  const [rotations, setRotations] = useState(0)
 
   useEffect(() => {
     scope.current = createScope({ root }).add((self) => {
