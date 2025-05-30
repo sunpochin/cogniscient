@@ -10,7 +10,10 @@
     "lint:fix": "next lint --fix",
     "lint:strict": "next lint --max-warnings 0",
     "type-check": "tsc --noEmit",
-    "pre-commit": "npm run lint:strict && npm run type-check"
+    "pre-commit": "npm run lint:strict && npm run type-check",
+    "prepare": "husky",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "animejs": "^4.0.2",
@@ -33,7 +36,19 @@
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
   }
 }

@@ -7,7 +7,7 @@ export default function Home() {
   const scope = useRef<Scope | null>(null)
 
   useEffect(() => {
-    scope.current = createScope({ root }).add((self) => {
+    scope.current = createScope({ root }).add(self => {
       // Every anime.js instances declared here are now scopped to <div ref={root}>
 
       // 複雜機械 3D 旋轉動畫
@@ -62,7 +62,7 @@ export default function Home() {
         delay: stagger(300),
       })
 
-      self.add('rotateLogo', (i) => {
+      self.add('rotateLogo', i => {
         animate('.logo', {
           rotate: i * 360,
           ease: 'out(4)',
