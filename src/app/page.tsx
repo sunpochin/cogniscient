@@ -80,7 +80,7 @@ export default function Home() {
                   ))}
                 </h1>
                 <p className="text-gray-400 max-w-xl text-lg">
-                  Applying neuroscience to the world's most complex
+                  Applying neuroscience to the world&apos;s most complex
                   human-machine systems.
                 </p>
               </div>
@@ -174,7 +174,7 @@ export default function Home() {
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
               Simulate real-time data display of medical monitoring devices,
               including ECG, vital signs monitoring, and diagnostic scanning
-              systems' dynamic interfaces.
+              systems&apos; dynamic interfaces.
             </p>
             <MedicalDevice size={400} />
             {/* <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -191,7 +191,7 @@ export default function Home() {
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
               Demonstrate the control interface of industrial automation
               systems, including pipeline fluid monitoring, pressure and
-              temperature detection, and valve control systems' dynamic
+              temperature detection, and valve control systems&apos; dynamic
               visualization.
             </p>
             <IndustrialControl size={400} />
@@ -260,8 +260,9 @@ export default function Home() {
             <h1 className="text-3xl font-bold">Radar System Animation</h1>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
               Demonstrate radar scanning, target detection, and tracking
-              systems' real-time dynamic effects, suitable for military defense,
-              aviation control, and maritime monitoring system interfaces.
+              systems&apos; real-time dynamic effects, suitable for military
+              defense, aviation control, and maritime monitoring system
+              interfaces.
             </p>
             <RadarSystem size={400} />
             {/* <div className="grid md:grid-cols-2 gap-6 mt-8">
