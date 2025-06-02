@@ -1,5 +1,5 @@
 'use client'
-import { animate, createScope, Scope, stagger } from 'animejs'
+import { animate, createScope, Scope } from 'animejs'
 import { useEffect, useRef, useState } from 'react'
 import Navbar from '@/components/Navbar'
 import MechanicalDevice from '@/components/MechanicalDevice'
