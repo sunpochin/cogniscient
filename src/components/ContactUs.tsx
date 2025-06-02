@@ -30,7 +30,13 @@ const ContactUs = () => {
   }
 
   return (
-    <section className="flex justify-center items-center mt-8">
+    <section className="flex flex-col justify-center items-center mt-8">
+      <h2 className="text-2xl font-bold">Contact Us</h2>
+      <p className="text-lg text-gray-500 dark:text-gray-400">
+        If you have any questions or feedback, please feel free to email to{' '}
+        <a href="mailto:service@wl-consulting.com">service@wl-consulting.com</a>
+      </p>
+      <p>or</p>
       <form onSubmit={handleSubmit} className="w-full max-w-md">
         <div className="flex flex-col space-y-4">
           <input

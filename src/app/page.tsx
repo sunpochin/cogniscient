@@ -61,60 +61,6 @@ export default function Home() {
 
             {/* 複雜機械 3D 旋轉裝置 */}
             <MechanicalDevice size={320} />
-
-            <div className="flex gap-4 items-center flex-col sm:flex-row mt-8">
-              <a
-                className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-                href="/contact"
-              >
-                聯絡我們
-              </a>
-            </div>
-
-            {/* Hero Section */}
-            <section className="bg-black text-white w-full rounded-lg p-12 mt-12">
-              <div className="flex flex-col justify-center items-center text-center">
-                <h1 className="text-4xl md:text-6xl font-bold tracking-widest text-blue-300 hero-text mb-6">
-                  {'COGNITIVE INTERFACE'.split('').map((letter, index) => (
-                    <span key={index} className="inline-block opacity-0">
-                      {letter === ' ' ? '\u00A0' : letter}
-                    </span>
-                  ))}
-                </h1>
-                <p className="text-gray-400 max-w-xl text-lg">
-                  Applying neuroscience to the world&apos;s most complex
-                  human-machine systems.
-                </p>
-              </div>
-
-              {/* Use Cases Section */}
-              <div className="grid md:grid-cols-3 gap-8 mt-16">
-                <div className="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition">
-                  <h2 className="text-xl font-semibold text-blue-200">
-                    Linear Particle Accelerators
-                  </h2>
-                  <p className="text-sm text-gray-400 mt-2">
-                    Optimizing operator cognition under extreme conditions.
-                  </p>
-                </div>
-                <div className="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition">
-                  <h2 className="text-xl font-semibold text-blue-200">
-                    Advanced Medical Devices
-                  </h2>
-                  <p className="text-sm text-gray-400 mt-2">
-                    Designing intuitive UIs for complex diagnostic workflows.
-                  </p>
-                </div>
-                <div className="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition">
-                  <h2 className="text-xl font-semibold text-blue-200">
-                    Oil Drilling Systems
-                  </h2>
-                  <p className="text-sm text-gray-400 mt-2">
-                    Enhancing decision support for remote operations.
-                  </p>
-                </div>
-              </div>
-            </section>
           </main>
         )
       case 'mechanical':
