@@ -8,7 +8,7 @@ interface HologramProjectionProps {
 }
 
 export default function HologramProjection({
-  size = 320,
+  size = 480,
   className = '',
 }: HologramProjectionProps) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -18,72 +18,72 @@ export default function HologramProjection({
 
     const animations: ReturnType<typeof animate>[] = []
 
-    // 全息影像旋轉
+    // 設計思路：模擬全息投影的旋轉和光束效果，展示未來科技視覺
     animations.push(
       animate(containerRef.current.querySelectorAll('.hologram-object'), {
-        rotateY: 360,
-        duration: 6000,
-        loop: true,
-        ease: 'linear',
+        rotateY: 360, // 沿 Y 軸旋轉 360 度
+        duration: 6000, // 6 秒完成一圈
+        loop: true, // 無限循環
+        ease: 'linear', // 線性緩動，保持穩定
       })
     )
 
-    // 投影光束動畫
+    // 為什麼這樣設計：投影光束動畫，模擬光束的脈動和擴散
     animations.push(
       animate(containerRef.current.querySelectorAll('.projection-beam'), {
-        opacity: [0.3, 0.8, 0.3],
-        scaleY: [0.8, 1.2, 0.8],
-        duration: 2000,
+        opacity: [0.3, 0.8, 0.3], // 透明度變化，創造閃爍效果
+        scaleY: [0.8, 1.2, 0.8], // 垂直縮放
+        duration: 2000, // 2 秒週期
         loop: true,
-        delay: stagger(200),
-        ease: 'inOutSine',
+        delay: stagger(200), // 每個元素延遲 200ms，創造連續效果
+        ease: 'inOutSine', // 正弦緩動，自然的脈動
       })
     )
 
-    // 全息粒子效果
+    // 關鍵技巧：全息粒子效果動畫，使用 stagger 延遲
     animations.push(
       animate(containerRef.current.querySelectorAll('.hologram-particle'), {
-        translateY: [0, -30, 0],
-        opacity: [0, 1, 0],
-        scale: [0.5, 1, 0.5],
-        duration: 3000,
+        translateY: [0, -30, 0], // 垂直移動 -30 像素
+        opacity: [0, 1, 0], // 淡入淡出
+        scale: [0.5, 1, 0.5], // 縮放變化
+        duration: 3000, // 3 秒週期
         loop: true,
-        delay: stagger(150),
-        ease: 'inOutQuad',
+        delay: stagger(150), // 延遲 150ms
+        ease: 'inOutQuad', // 二次緩動，加速後減速
       })
     )
 
-    // 掃描線動畫
+    // SVG 結構設計：掃描線動畫
     animations.push(
       animate(containerRef.current.querySelectorAll('.scan-line'), {
-        translateY: [0, 120],
-        opacity: [0, 0.8, 0],
-        duration: 2500,
+        translateY: [-100, 100], // 垂直移動範圍
+        opacity: [0, 0.8, 0], // 透明度變化
+        duration: 2500, // 2.5 秒週期
         loop: true,
-        ease: 'inOutQuad',
+        ease: 'inOutQuad', // 二次緩動
       })
     )
 
-    // 數據流光效
+    // 性能考量：數據流光效動畫，避免過度消耗資源
     animations.push(
       animate(containerRef.current.querySelectorAll('.data-stream'), {
-        strokeDashoffset: [100, 0],
-        opacity: [0.4, 1, 0.4],
-        duration: 1500,
+        strokeDashoffset: [100, 0], // 虛線偏移
+        opacity: [0.4, 1, 0.4], // 透明度變化
+        duration: 1500, // 1.5 秒週期
         loop: true,
-        delay: stagger(100),
-        ease: 'linear',
+        delay: stagger(100), // 延遲 100ms
+        ease: 'linear', // 線性緩動
       })
     )
 
-    // 投影器脈動
+    // 響應式設計：投影器脈動動畫
     animations.push(
       animate(containerRef.current.querySelectorAll('.projector'), {
-        scale: [1, 1.1, 1],
-        opacity: [0.7, 1, 0.7],
-        duration: 3000,
+        scale: [1, 1.1, 1], // 縮放效果
+        opacity: [0.7, 1, 0.7], // 透明度變化
+        duration: 3000, // 3 秒週期
         loop: true,
-        ease: 'inOutSine',
+        ease: 'inOutSine', // 正弦緩動
       })
     )
 
@@ -337,7 +337,7 @@ export default function HologramProjection({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          全息投影
+          Hologram Projection
         </text>
         <text
           x="70"
@@ -345,7 +345,7 @@ export default function HologramProjection({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          控制台
+          Control Panel
         </text>
         <text
           x="160"
@@ -353,7 +353,7 @@ export default function HologramProjection({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          3D 全息顯示系統
+          3D Holographic Display System
         </text>
         <text
           x="160"
@@ -361,7 +361,7 @@ export default function HologramProjection({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          立體影像投影
+          Stereoscopic Image Projection
         </text>
 
         {/* 投影器標籤 */}
@@ -371,7 +371,7 @@ export default function HologramProjection({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          投影器A
+          Projector A
         </text>
         <text
           x="250"
@@ -379,7 +379,7 @@ export default function HologramProjection({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          投影器B
+          Projector B
         </text>
         <text
           x="70"
@@ -387,7 +387,7 @@ export default function HologramProjection({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          投影器C
+          Projector C
         </text>
         <text
           x="70"
@@ -395,7 +395,7 @@ export default function HologramProjection({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          投影器D
+          Projector D
         </text>
       </svg>
     </div>

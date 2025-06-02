@@ -8,7 +8,7 @@ interface MedicalDeviceProps {
 }
 
 export default function MedicalDevice({
-  size = 320,
+  size = 480,
   className = '',
 }: MedicalDeviceProps) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -18,48 +18,48 @@ export default function MedicalDevice({
 
     const animations: ReturnType<typeof animate>[] = []
 
-    // 心電圖波形動畫
+    // 設計思路：模擬醫療裝置的監控和波形動畫，展示即時數據變化
     animations.push(
       animate(containerRef.current.querySelectorAll('.ecg-line'), {
-        strokeDashoffset: [200, 0],
-        duration: 2000,
+        strokeDashoffset: [200, 0], // 虛線偏移，創造流動效果
+        duration: 2000, // 2 秒週期
         loop: true,
-        ease: 'linear',
+        ease: 'linear', // 線性緩動，保持平滑
       })
     )
 
-    // 生命體徵監控器脈動
+    // 為什麼這樣設計：生命體徵監控器脈動動畫，模擬心跳和變化
     animations.push(
       animate(containerRef.current.querySelectorAll('.vital-sign'), {
-        scale: [1, 1.1, 1],
-        opacity: [0.7, 1, 0.7],
-        duration: 1000,
+        scale: [1, 1.1, 1], // 縮放效果
+        opacity: [0.7, 1, 0.7], // 透明度變化
+        duration: 1000, // 1 秒週期
         loop: true,
-        delay: stagger(200),
-        ease: 'inOutSine',
+        delay: stagger(200), // 延遲 200ms，創造節奏感
+        ease: 'inOutSine', // 正弦緩動，自然的脈動
       })
     )
 
-    // 掃描線動畫
+    // 關鍵技巧：掃描線動畫，使用 translate 效果
     animations.push(
       animate(containerRef.current.querySelectorAll('.scan-line'), {
-        translateY: [-100, 100],
-        opacity: [0, 1, 0],
-        duration: 3000,
+        translateY: [-100, 100], // 垂直移動範圍
+        opacity: [0, 1, 0], // 淡入淡出
+        duration: 3000, // 3 秒週期
         loop: true,
-        ease: 'inOutQuad',
+        ease: 'inOutQuad', // 二次緩動
       })
     )
 
-    // 數據點閃爍
+    // SVG 結構設計：數據點閃爍動畫
     animations.push(
       animate(containerRef.current.querySelectorAll('.data-point'), {
-        opacity: [0.3, 1, 0.3],
-        scale: [0.8, 1.2, 0.8],
-        duration: 1500,
+        opacity: [0.3, 1, 0.3], // 透明度變化
+        scale: [0.8, 1.2, 0.8], // 縮放變化
+        duration: 1500, // 1.5 秒週期
         loop: true,
-        delay: stagger(100),
-        ease: 'inOutQuad',
+        delay: stagger(100), // 延遲 100ms
+        ease: 'inOutQuad', // 二次緩動
       })
     )
 
@@ -226,7 +226,7 @@ export default function MedicalDevice({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          心率
+          Heart Rate
         </text>
         <text
           x="120"
@@ -234,7 +234,7 @@ export default function MedicalDevice({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          血壓
+          Blood Pressure
         </text>
         <text
           x="180"
@@ -242,7 +242,7 @@ export default function MedicalDevice({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          體溫
+          Body Temperature
         </text>
         <text
           x="240"
@@ -250,7 +250,7 @@ export default function MedicalDevice({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          血氧
+          Blood Oxygen
         </text>
       </svg>
     </div>

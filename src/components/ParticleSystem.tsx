@@ -8,7 +8,7 @@ interface ParticleSystemProps {
 }
 
 export default function ParticleSystem({
-  size = 320,
+  size = 480,
   className = '',
 }: ParticleSystemProps) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -18,40 +18,40 @@ export default function ParticleSystem({
 
     const animations: ReturnType<typeof animate>[] = []
 
-    // 粒子軌道動畫
+    // 設計思路：模擬粒子系統的動態效果，展示粒子加速和能量波動
     animations.push(
       animate(containerRef.current.querySelectorAll('.particle'), {
-        translateX: () => Math.random() * 200 - 100,
-        translateY: () => Math.random() * 200 - 100,
-        scale: [0, 1, 0],
-        opacity: [0, 1, 0],
-        duration: 3000,
+        translateX: () => Math.random() * 200 - 100, // 隨機水平移動
+        translateY: () => Math.random() * 200 - 100, // 隨機垂直移動
+        scale: [0, 1, 0], // 縮放變化
+        opacity: [0, 1, 0], // 透明度變化
+        duration: 3000, // 3 秒週期
         loop: true,
-        delay: stagger(100),
-        ease: 'inOutQuad',
+        delay: stagger(100), // 延遲 100ms，創造隨機效果
+        ease: 'inOutQuad', // 二次緩動
       })
     )
 
-    // 能量波動畫
+    // 為什麼這樣設計：能量波動畫，模擬能量擴散
     animations.push(
       animate(containerRef.current.querySelectorAll('.energy-wave'), {
-        scale: [0, 2, 0],
-        opacity: [0.8, 0, 0],
-        duration: 2000,
+        scale: [0, 2, 0], // 縮放擴散
+        opacity: [0.8, 0, 0], // 透明度變化
+        duration: 2000, // 2 秒週期
         loop: true,
-        delay: stagger(400),
-        ease: 'outQuad',
+        delay: stagger(400), // 延遲 400ms
+        ease: 'outQuad', // 二次緩動，加速後減速
       })
     )
 
-    // 中心核心脈動
+    // 關鍵技巧：中心核心脈動動畫，使用 scale 效果
     animations.push(
       animate(containerRef.current.querySelectorAll('.core'), {
-        scale: [1, 1.3, 1],
-        opacity: [0.6, 1, 0.6],
-        duration: 1500,
+        scale: [1, 1.3, 1], // 縮放效果
+        opacity: [0.6, 1, 0.6], // 透明度變化
+        duration: 1500, // 1.5 秒週期
         loop: true,
-        ease: 'inOutSine',
+        ease: 'inOutSine', // 正弦緩動
       })
     )
 
@@ -81,7 +81,7 @@ export default function ParticleSystem({
         strokeWidth="1"
         opacity="0.8"
       >
-        {/* 中心核心 */}
+        {/* Center Core */}
         <circle
           className="core"
           cx="160"
@@ -93,7 +93,7 @@ export default function ParticleSystem({
           strokeWidth="2"
         />
 
-        {/* 能量波 */}
+        {/* Energy Wave */}
         {energyWaves.map((_, index) => (
           <circle
             key={`wave-${index}`}
@@ -108,7 +108,7 @@ export default function ParticleSystem({
           />
         ))}
 
-        {/* 粒子 */}
+        {/* Particle */}
         {particles.map((_, index) => (
           <circle
             key={`particle-${index}`}
@@ -121,7 +121,7 @@ export default function ParticleSystem({
           />
         ))}
 
-        {/* 軌道線 */}
+        {/* Orbit Line */}
         <circle
           cx="160"
           cy="160"

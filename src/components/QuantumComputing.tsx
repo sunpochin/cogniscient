@@ -8,7 +8,7 @@ interface QuantumComputingProps {
 }
 
 export default function QuantumComputing({
-  size = 320,
+  size = 480,
   className = '',
 }: QuantumComputingProps) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -239,7 +239,7 @@ export default function QuantumComputing({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          量子位元陣列
+          Quantum Computing Animation
         </text>
         <text
           x="160"
@@ -247,7 +247,7 @@ export default function QuantumComputing({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          量子計算處理器
+          Quantum Computing Processor
         </text>
 
         {/* 量子門標籤 */}

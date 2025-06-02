@@ -1,5 +1,5 @@
 'use client'
-import { animate, createScope, Scope } from 'animejs'
+import { animate, createScope, Scope, stagger } from 'animejs'
 import { useEffect, useRef, useState } from 'react'
 import Navbar from '@/components/Navbar'
 import MechanicalDevice from '@/components/MechanicalDevice'
@@ -46,7 +46,11 @@ export default function Home() {
         return (
           <main className="flex flex-col gap-8 items-center text-center py-12">
             <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 max-w-4xl">
-              從認知神經科學角度出發，專注於複雜系統的人機界面設計，例如直線粒子加速器、大型醫療設備，以及大型礦場鑽油設施。我們提供低調科技感的解決方案，幫助客戶優化人機互動。
+              From a cognitive neuroscience perspective, we focus on the
+              human-machine interface design of complex systems, such as linear
+              particle accelerators, large medical devices, and large-scale oil
+              drilling facilities. We provide low-key tech solutions to help
+              clients optimize human-machine interactions.
             </p>
 
             {/* 複雜機械 3D 旋轉裝置 */}
@@ -72,7 +76,7 @@ export default function Home() {
                   ))}
                 </h1>
                 <p className="text-gray-400 max-w-xl text-lg">
-                  Applying neuroscience to the world&apos;s most complex
+                  Applying neuroscience to the world's most complex
                   human-machine systems.
                 </p>
               </div>
@@ -110,10 +114,12 @@ export default function Home() {
       case 'mechanical':
         return (
           <main className="flex flex-col gap-8 items-center text-center py-12">
-            <h1 className="text-3xl font-bold">機械裝置動畫</h1>
+            <h1 className="text-3xl font-bold">Mechanical Device Animation</h1>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
-              複雜機械系統的 3D
-              旋轉動畫，展示多層次的機械運作原理，適用於工業控制系統和精密設備的人機界面設計。
+              Complex mechanical system 3D rotation animation, demonstrating
+              multi-level mechanical operation principles, suitable for
+              industrial control systems and precision equipment human-machine
+              interface design.
             </p>
             <MechanicalDevice size={400} />
             {/* <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -126,9 +132,11 @@ export default function Home() {
       case 'particle':
         return (
           <main className="flex flex-col gap-8 items-center text-center py-12">
-            <h1 className="text-3xl font-bold">粒子系統動畫</h1>
+            <h1 className="text-3xl font-bold">Particle System Animation</h1>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
-              模擬粒子加速器和高能物理實驗的動態視覺效果，展示粒子軌跡、能量波動和核心反應過程。
+              Simulate particle accelerators and high-energy physics experiments
+              with dynamic visual effects, demonstrating particle trajectories,
+              energy fluctuations, and core reaction processes.
             </p>
             <ParticleSystem size={400} />
             {/* <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -141,10 +149,12 @@ export default function Home() {
       case 'neural':
         return (
           <main className="flex flex-col gap-8 items-center text-center py-12">
-            <h1 className="text-3xl font-bold">神經網路動畫</h1>
+            <h1 className="text-3xl font-bold">Neural Network Animation</h1>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
-              視覺化神經網路的信號傳遞過程，展示認知科學在人機界面設計中的應用，適用於
-              AI 輔助決策系統。
+              Visualize the signal transmission process of neural networks,
+              demonstrating the application of cognitive science in
+              human-machine interface design, suitable for AI-assisted decision
+              systems.
             </p>
             <NeuralNetwork size={400} />
             {/* <div className="grid md:grid-cols-2 gap-6 mt-8">
@@ -156,9 +166,11 @@ export default function Home() {
       case 'medical':
         return (
           <main className="flex flex-col gap-8 items-center text-center py-12">
-            <h1 className="text-3xl font-bold">醫療設備動畫</h1>
+            <h1 className="text-3xl font-bold">Medical Device Animation</h1>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
-              模擬醫療監控設備的即時數據顯示，包括心電圖、生命體徵監控和診斷掃描系統的動態界面。
+              Simulate real-time data display of medical monitoring devices,
+              including ECG, vital signs monitoring, and diagnostic scanning
+              systems' dynamic interfaces.
             </p>
             <MedicalDevice size={400} />
             {/* <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -171,9 +183,12 @@ export default function Home() {
       case 'industrial':
         return (
           <main className="flex flex-col gap-8 items-center text-center py-12">
-            <h1 className="text-3xl font-bold">工業控制動畫</h1>
+            <h1 className="text-3xl font-bold">Industrial Control Animation</h1>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
-              展示工業自動化系統的控制界面，包括管道流體監控、壓力溫度檢測和閥門控制系統的動態視覺化。
+              Demonstrate the control interface of industrial automation
+              systems, including pipeline fluid monitoring, pressure and
+              temperature detection, and valve control systems' dynamic
+              visualization.
             </p>
             <IndustrialControl size={400} />
             {/* <div className="grid md:grid-cols-2 gap-6 mt-8">
@@ -185,9 +200,11 @@ export default function Home() {
       case 'quantum':
         return (
           <main className="flex flex-col gap-8 items-center text-center py-12">
-            <h1 className="text-3xl font-bold">量子計算動畫</h1>
+            <h1 className="text-3xl font-bold">Quantum Computing Animation</h1>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
-              展示量子位元、量子糾纏和量子門操作的視覺化效果，適用於量子計算研究和高端科學計算系統的人機界面設計。
+              Visualize quantum bits, quantum entanglement, and quantum gate
+              operations, suitable for quantum computing research and high-end
+              scientific computing system human-machine interface design.
             </p>
             <QuantumComputing size={400} />
             {/* <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -200,9 +217,14 @@ export default function Home() {
       case 'satellite':
         return (
           <main className="flex flex-col gap-8 items-center text-center py-12">
-            <h1 className="text-3xl font-bold">衛星通訊動畫</h1>
+            <h1 className="text-3xl font-bold">
+              Satellite Communication Animation
+            </h1>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
-              模擬衛星軌道運行、信號傳輸和地面站通訊的動態效果，展示全球通訊網路和太空通訊系統的運作原理。
+              Simulate satellite orbit operation, signal transmission, and
+              ground station communication dynamic effects, demonstrating the
+              operation principles of global communication networks and space
+              communication systems.
             </p>
             <SatelliteComm size={400} />
             {/* <div className="grid md:grid-cols-2 gap-6 mt-8">
@@ -214,10 +236,11 @@ export default function Home() {
       case 'dna':
         return (
           <main className="flex flex-col gap-8 items-center text-center py-12">
-            <h1 className="text-3xl font-bold">DNA 分析動畫</h1>
+            <h1 className="text-3xl font-bold">DNA Analysis Animation</h1>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
-              視覺化 DNA
-              雙螺旋結構、基因序列分析和蛋白質合成過程，適用於生物醫學研究設備和基因工程系統界面。
+              Visualize DNA double helix structure, gene sequence analysis, and
+              protein synthesis processes, suitable for biomedical research
+              equipment and genetic engineering system interfaces.
             </p>
             <DNAAnalysis size={400} />
             {/* <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -230,24 +253,29 @@ export default function Home() {
       case 'radar':
         return (
           <main className="flex flex-col gap-8 items-center text-center py-12">
-            <h1 className="text-3xl font-bold">雷達系統動畫</h1>
+            <h1 className="text-3xl font-bold">Radar System Animation</h1>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
-              展示雷達掃描、目標檢測和追蹤系統的即時動態效果，適用於軍事防禦、航空管制和海事監控系統界面。
+              Demonstrate radar scanning, target detection, and tracking
+              systems' real-time dynamic effects, suitable for military defense,
+              aviation control, and maritime monitoring system interfaces.
             </p>
             <RadarSystem size={400} />
-            <div className="grid md:grid-cols-2 gap-6 mt-8">
+            {/* <div className="grid md:grid-cols-2 gap-6 mt-8">
               <RadarSystem size={300} />
               <RadarSystem size={300} />
-            </div>
+            </div> */}
           </main>
         )
       case 'hologram':
         return (
           <main className="flex flex-col gap-8 items-center text-center py-12">
-            <h1 className="text-3xl font-bold">全息投影動畫</h1>
+            <h1 className="text-3xl font-bold">
+              Hologram Projection Animation
+            </h1>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
-              模擬 3D
-              全息影像投射、光束投影和立體顯示效果，展示未來顯示技術和虛擬實境系統的視覺化界面。
+              Simulate 3D hologram image projection, beam projection, and
+              stereoscopic display effects, demonstrating future display
+              technology and virtual reality system visual interfaces.
             </p>
             <HologramProjection size={400} />
             {/* <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -267,7 +295,7 @@ export default function Home() {
       <Navbar activeTab={activeTab} onTabChange={setActiveTab} />
       <div
         ref={root}
-        className="container mx-auto px-4 py-8 font-[family-name:var(--font-geist-sans)]"
+        className="bg-gray-500 container mx-auto px-4 py-8 font-[family-name:var(--font-geist-sans)]"
       >
         {renderTabContent()}
       </div>

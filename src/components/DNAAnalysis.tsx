@@ -8,7 +8,7 @@ interface DNAAnalysisProps {
 }
 
 export default function DNAAnalysis({
-  size = 320,
+  size = 480,
   className = '',
 }: DNAAnalysisProps) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -18,60 +18,60 @@ export default function DNAAnalysis({
 
     const animations: ReturnType<typeof animate>[] = []
 
-    // DNA雙螺旋旋轉
+    // 設計思路：將 DNA 分析的核心概念轉化為視覺元素，如雙螺旋結構和鹼基對
     animations.push(
       animate(containerRef.current.querySelectorAll('.dna-helix'), {
-        rotate: 360,
-        duration: 10000,
-        loop: true,
-        ease: 'linear',
+        rotate: 360, // 旋轉 360 度
+        duration: 10000, // 10 秒完成一圈
+        loop: true, // 無限循環
+        ease: 'linear', // 線性緩動，保持恆定速度
       })
     )
 
-    // 鹼基對閃爍
+    // 為什麼這樣設計：鹼基對閃爍動畫，模擬生物學中的鹼基配對變化
     animations.push(
       animate(containerRef.current.querySelectorAll('.base-pair'), {
-        opacity: [0.4, 1, 0.4],
-        scale: [0.8, 1.1, 0.8],
-        duration: 2000,
+        opacity: [0.4, 1, 0.4], // 透明度變化，創造閃爍效果
+        scale: [0.8, 1.1, 0.8], // 縮放變化
+        duration: 2000, // 2 秒週期
         loop: true,
-        delay: stagger(100),
-        ease: 'inOutSine',
+        delay: stagger(100), // 每個元素延遲 100ms，創造波浪效果
+        ease: 'inOutSine', // 正弦緩動，自然的呼吸效果
       })
     )
 
-    // 基因序列掃描
+    // 關鍵技巧：基因序列掃描動畫，使用 stagger 延遲
     animations.push(
       animate(containerRef.current.querySelectorAll('.sequence-scanner'), {
-        translateY: [0, 200],
-        opacity: [0, 1, 0],
-        duration: 3000,
+        translateY: [0, 200], // 垂直移動 200 像素
+        opacity: [0, 1, 0], // 淡入淡出效果
+        duration: 3000, // 3 秒週期
         loop: true,
-        ease: 'inOutQuad',
+        ease: 'inOutQuad', // 二次緩動，加速後減速
       })
     )
 
-    // 蛋白質合成動畫
+    // SVG 結構設計：蛋白質合成動畫
     animations.push(
       animate(containerRef.current.querySelectorAll('.protein'), {
-        scale: [0, 1, 1.2, 1],
-        opacity: [0, 0.8, 1, 0.8],
-        duration: 4000,
+        scale: [0, 1, 1.2, 1], // 縮放效果
+        opacity: [0, 0.8, 1, 0.8], // 透明度變化
+        duration: 4000, // 4 秒週期
         loop: true,
-        delay: stagger(500),
-        ease: 'inOutQuad',
+        delay: stagger(500), // 延遲 500ms
+        ease: 'inOutQuad', // 二次緩動
       })
     )
 
-    // 分析數據流動
+    // 性能考量：數據流動動畫，確保動畫順暢
     animations.push(
       animate(containerRef.current.querySelectorAll('.data-stream'), {
-        translateX: [0, 150],
-        opacity: [0, 1, 0],
-        duration: 2500,
+        translateX: [0, 150], // 水平移動 150 像素
+        opacity: [0, 1, 0], // 淡入淡出
+        duration: 2500, // 2.5 秒週期
         loop: true,
-        delay: stagger(200),
-        ease: 'inOutQuad',
+        delay: stagger(200), // 延遲 200ms
+        ease: 'inOutQuad', // 二次緩動
       })
     )
 
@@ -251,7 +251,7 @@ export default function DNAAnalysis({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          DNA 序列分析儀
+          DNA Analysis
         </text>
         <text
           x="270"
@@ -259,7 +259,7 @@ export default function DNAAnalysis({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          分析結果
+          Analysis Result
         </text>
         <text
           x="270"
@@ -267,7 +267,7 @@ export default function DNAAnalysis({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          蛋白質
+          Protein
         </text>
         <text
           x="160"
@@ -275,7 +275,7 @@ export default function DNAAnalysis({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          基因工程控制台
+          Gene Engineering Console
         </text>
       </svg>
     </div>

@@ -8,7 +8,7 @@ interface RadarSystemProps {
 }
 
 export default function RadarSystem({
-  size = 320,
+  size = 480,
   className = '',
 }: RadarSystemProps) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -331,7 +331,7 @@ export default function RadarSystem({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          雷達系統
+          Radar System
         </text>
         <text
           x="60"
@@ -339,7 +339,7 @@ export default function RadarSystem({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          運行中
+          Running
         </text>
 
         {/* 目標信息 */}
@@ -349,7 +349,7 @@ export default function RadarSystem({
           textAnchor="start"
           className="text-xs fill-current opacity-60"
         >
-          檢測目標: {targets.length}
+          Detected Targets: {targets.length}
         </text>
         <text
           x="250"
@@ -357,7 +357,7 @@ export default function RadarSystem({
           textAnchor="start"
           className="text-xs fill-current opacity-60"
         >
-          追蹤中: {targets.filter(t => t.strength > 0.5).length}
+          Tracking: {targets.filter(t => t.strength > 0.5).length}
         </text>
       </svg>
     </div>

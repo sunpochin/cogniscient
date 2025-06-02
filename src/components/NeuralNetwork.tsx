@@ -8,7 +8,7 @@ interface NeuralNetworkProps {
 }
 
 export default function NeuralNetwork({
-  size = 320,
+  size = 480,
   className = '',
 }: NeuralNetworkProps) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -18,40 +18,40 @@ export default function NeuralNetwork({
 
     const animations: ReturnType<typeof animate>[] = []
 
-    // 神經元脈動
+    // 設計思路：模擬神經網絡的脈動和信號傳遞，展示AI和認知科學的視覺化
     animations.push(
       animate(containerRef.current.querySelectorAll('.neuron'), {
-        scale: [1, 1.2, 1],
-        opacity: [0.6, 1, 0.6],
-        duration: 2000,
+        scale: [1, 1.2, 1], // 縮放效果，模擬脈動
+        opacity: [0.6, 1, 0.6], // 透明度變化
+        duration: 2000, // 2 秒週期
         loop: true,
-        delay: stagger(200),
-        ease: 'inOutSine',
+        delay: stagger(200), // 延遲 200ms，創造連續脈動
+        ease: 'inOutSine', // 正弦緩動，自然的節奏
       })
     )
 
-    // 連接線信號傳遞
+    // 為什麼這樣設計：連接線信號傳遞動畫，模擬數據流動
     animations.push(
       animate(containerRef.current.querySelectorAll('.connection'), {
-        strokeDashoffset: [100, 0],
-        opacity: [0.3, 0.8, 0.3],
-        duration: 1500,
+        strokeDashoffset: [100, 0], // 虛線偏移，創造流動效果
+        opacity: [0.3, 0.8, 0.3], // 透明度變化
+        duration: 1500, // 1.5 秒週期
         loop: true,
-        delay: stagger(100),
-        ease: 'linear',
+        delay: stagger(100), // 延遲 100ms
+        ease: 'linear', // 線性緩動，保持平滑
       })
     )
 
-    // 數據流動畫
+    // 關鍵技巧：數據流動畫，使用 translate 效果
     animations.push(
       animate(containerRef.current.querySelectorAll('.data-flow'), {
-        translateX: [0, 200],
-        opacity: [0, 1, 0],
-        scale: [0.5, 1, 0.5],
-        duration: 2500,
+        translateX: [0, 200], // 水平移動 200 像素
+        opacity: [0, 1, 0], // 淡入淡出
+        scale: [0.5, 1, 0.5], // 縮放變化
+        duration: 2500, // 2.5 秒週期
         loop: true,
-        delay: stagger(300),
-        ease: 'inOutQuad',
+        delay: stagger(300), // 延遲 300ms
+        ease: 'inOutQuad', // 二次緩動
       })
     )
 
@@ -179,7 +179,7 @@ export default function NeuralNetwork({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          輸入層
+          Input Layer
         </text>
         <text
           x="130"
@@ -187,7 +187,7 @@ export default function NeuralNetwork({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          隱藏層
+          Hidden 1
         </text>
         <text
           x="210"
@@ -195,7 +195,7 @@ export default function NeuralNetwork({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          隱藏層
+          Hidden 2
         </text>
         <text
           x="290"
@@ -203,7 +203,7 @@ export default function NeuralNetwork({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          輸出層
+          Output Layer
         </text>
       </svg>
     </div>

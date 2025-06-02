@@ -8,7 +8,7 @@ interface MechanicalDeviceProps {
 }
 
 export default function MechanicalDevice({
-  size = 320,
+  size = 480,
   className = '',
 }: MechanicalDeviceProps) {
   const deviceRef = useRef<HTMLDivElement>(null)
@@ -18,66 +18,66 @@ export default function MechanicalDevice({
 
     const animations: ReturnType<typeof animate>[] = []
 
-    // 外圈旋轉
+    // 設計思路：模擬機械裝置的旋轉和互動效果，展示工業機械運作
     animations.push(
       animate(deviceRef.current.querySelectorAll('.outer-ring'), {
-        rotate: 360,
-        duration: 8000,
-        loop: true,
-        ease: 'linear',
+        rotate: 360, // 旋轉 360 度
+        duration: 8000, // 8 秒完成一圈
+        loop: true, // 無限循環
+        ease: 'linear', // 線性緩動，保持穩定
       })
     )
 
-    // 中圈反向旋轉
+    // 為什麼這樣設計：中圈反向旋轉動畫，增加層次感和動態
     animations.push(
       animate(deviceRef.current.querySelectorAll('.middle-ring'), {
-        rotate: -360,
-        duration: 6000,
+        rotate: -360, // 反向旋轉 360 度
+        duration: 6000, // 6 秒週期
         loop: true,
-        ease: 'linear',
+        ease: 'linear', // 線性緩動
       })
     )
 
-    // 內圈快速旋轉
+    // 關鍵技巧：內圈快速旋轉動畫，使用 stagger 延遲
     animations.push(
       animate(deviceRef.current.querySelectorAll('.inner-ring'), {
-        rotate: 360,
-        duration: 3000,
+        rotate: 360, // 旋轉 360 度
+        duration: 3000, // 3 秒週期
         loop: true,
-        ease: 'linear',
+        ease: 'linear', // 線性緩動
       })
     )
 
-    // 機械臂旋轉
+    // SVG 結構設計：機械臂旋轉動畫
     animations.push(
       animate(deviceRef.current.querySelectorAll('.mechanical-arm'), {
-        rotate: 360,
-        duration: 10000,
+        rotate: 360, // 旋轉 360 度
+        duration: 10000, // 10 秒週期
         loop: true,
-        ease: 'linear',
-        delay: stagger(500),
+        delay: stagger(500), // 延遲 500ms，創造順序效果
+        ease: 'linear', // 線性緩動
       })
     )
 
-    // 小齒輪組
+    // 性能考量：小齒輪組動畫，避免過度負載
     animations.push(
       animate(deviceRef.current.querySelectorAll('.gear'), {
-        rotate: 360,
-        duration: 2000,
+        rotate: 360, // 旋轉 360 度
+        duration: 2000, // 2 秒週期
         loop: true,
-        ease: 'linear',
-        delay: stagger(200),
+        delay: stagger(200), // 延遲 200ms
+        ease: 'linear', // 線性緩動
       })
     )
 
-    // 3D 效果 - 縮放脈動
+    // 響應式設計：3D 效果縮放脈動動畫
     animations.push(
       animate(deviceRef.current.querySelectorAll('.pulse-element'), {
-        scale: [1, 1.1, 1],
-        duration: 4000,
+        scale: [1, 1.1, 1], // 縮放效果
+        duration: 4000, // 4 秒週期
         loop: true,
-        ease: 'inOutQuad',
-        delay: stagger(300),
+        delay: stagger(300), // 延遲 300ms
+        ease: 'inOutQuad', // 二次緩動
       })
     )
 

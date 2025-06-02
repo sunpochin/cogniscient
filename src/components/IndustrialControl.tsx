@@ -8,7 +8,7 @@ interface IndustrialControlProps {
 }
 
 export default function IndustrialControl({
-  size = 320,
+  size = 480,
   className = '',
 }: IndustrialControlProps) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -18,58 +18,58 @@ export default function IndustrialControl({
 
     const animations: ReturnType<typeof animate>[] = []
 
-    // 管道流體動畫
+    // 設計思路：模擬工業控制系統的流體動畫和儀表變化，展示動態監控
     animations.push(
       animate(containerRef.current.querySelectorAll('.flow-particle'), {
-        translateX: [0, 200],
-        opacity: [0, 1, 0],
-        duration: 2000,
+        translateX: [0, 200], // 水平移動 200 像素
+        opacity: [0, 1, 0], // 淡入淡出效果
+        duration: 2000, // 2 秒週期
         loop: true,
-        delay: stagger(200),
-        ease: 'linear',
+        delay: stagger(200), // 每個元素延遲 200ms，創造流動感
+        ease: 'linear', // 線性緩動，保持流暢
       })
     )
 
-    // 壓力表指針旋轉
+    // 為什麼這樣設計：壓力表指針旋轉動畫，模擬壓力變化的動態
     animations.push(
       animate(containerRef.current.querySelectorAll('.pressure-needle'), {
-        rotate: [0, 180, 0],
-        duration: 4000,
+        rotate: [0, 180, 0], // 旋轉範圍
+        duration: 4000, // 4 秒週期
         loop: true,
-        ease: 'inOutQuad',
+        ease: 'inOutQuad', // 二次緩動，加速後減速
       })
     )
 
-    // 溫度計液體上升
+    // 關鍵技巧：溫度計液體上升動畫，使用 scale 效果
     animations.push(
       animate(containerRef.current.querySelectorAll('.temperature-liquid'), {
-        scaleY: [0.3, 1, 0.3],
-        duration: 3000,
+        scaleY: [0.3, 1, 0.3], // 垂直縮放
+        duration: 3000, // 3 秒週期
         loop: true,
-        ease: 'inOutSine',
+        ease: 'inOutSine', // 正弦緩動，自然的上升效果
       })
     )
 
-    // 控制閥門動畫
+    // SVG 結構設計：控制閥門動畫
     animations.push(
       animate(containerRef.current.querySelectorAll('.valve'), {
-        rotate: [0, 90, 0],
-        duration: 2500,
+        rotate: [0, 90, 0], // 旋轉 90 度
+        duration: 2500, // 2.5 秒週期
         loop: true,
-        delay: stagger(500),
-        ease: 'inOutQuad',
+        delay: stagger(500), // 延遲 500ms
+        ease: 'inOutQuad', // 二次緩動
       })
     )
 
-    // 狀態指示燈閃爍
+    // 性能考量：狀態指示燈閃爍動畫，避免過度複雜
     animations.push(
       animate(containerRef.current.querySelectorAll('.status-light'), {
-        opacity: [0.3, 1, 0.3],
-        scale: [0.8, 1.2, 0.8],
-        duration: 1000,
+        opacity: [0.3, 1, 0.3], // 透明度變化
+        scale: [0.8, 1.2, 0.8], // 縮放變化
+        duration: 1000, // 1 秒週期
         loop: true,
-        delay: stagger(300),
-        ease: 'inOutSine',
+        delay: stagger(300), // 延遲 300ms
+        ease: 'inOutSine', // 正弦緩動
       })
     )
 
@@ -272,7 +272,7 @@ export default function IndustrialControl({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          壓力
+          Pressure
         </text>
         <text
           x="204"
@@ -280,7 +280,7 @@ export default function IndustrialControl({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          溫度
+          Temperature
         </text>
         <text
           x="160"
@@ -288,7 +288,7 @@ export default function IndustrialControl({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          控制閥
+          Control Valve
         </text>
         <text
           x="160"
@@ -296,7 +296,7 @@ export default function IndustrialControl({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          控制面板
+          Control Panel
         </text>
       </svg>
     </div>

@@ -8,7 +8,7 @@ interface SatelliteCommProps {
 }
 
 export default function SatelliteComm({
-  size = 320,
+  size = 480,
   className = '',
 }: SatelliteCommProps) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -18,7 +18,7 @@ export default function SatelliteComm({
 
     const animations: ReturnType<typeof animate>[] = []
 
-    // 衛星軌道旋轉
+    // Satellite orbit rotation
     animations.push(
       animate(containerRef.current.querySelectorAll('.satellite'), {
         rotate: 360,
@@ -28,7 +28,7 @@ export default function SatelliteComm({
       })
     )
 
-    // 信號波動畫
+    // Signal wave animation
     animations.push(
       animate(containerRef.current.querySelectorAll('.signal-wave'), {
         scale: [0, 3, 0],
@@ -40,7 +40,7 @@ export default function SatelliteComm({
       })
     )
 
-    // 數據傳輸動畫
+    // Data transmission animation
     animations.push(
       animate(containerRef.current.querySelectorAll('.data-packet'), {
         translateY: [-50, 50],
@@ -53,7 +53,7 @@ export default function SatelliteComm({
       })
     )
 
-    // 地面站天線旋轉
+    // Ground station antenna rotation
     animations.push(
       animate(containerRef.current.querySelectorAll('.antenna'), {
         rotate: [0, 45, 0],
@@ -63,7 +63,7 @@ export default function SatelliteComm({
       })
     )
 
-    // 軌道路徑閃爍
+    // Orbit path flashing
     animations.push(
       animate(containerRef.current.querySelectorAll('.orbit-path'), {
         strokeDashoffset: [100, 0],
@@ -97,7 +97,7 @@ export default function SatelliteComm({
         strokeWidth="1"
         opacity="0.8"
       >
-        {/* 地球 */}
+        {/* Earth */}
         <circle
           cx="160"
           cy="160"
@@ -109,7 +109,7 @@ export default function SatelliteComm({
           opacity="0.6"
         />
 
-        {/* 衛星軌道 */}
+        {/* Satellite orbit */}
         <circle
           className="orbit-path"
           cx="160"
@@ -133,7 +133,7 @@ export default function SatelliteComm({
           strokeDasharray="3,3"
         />
 
-        {/* 衛星 */}
+        {/* Satellite */}
         <g className="satellite" style={{ transformOrigin: '160px 160px' }}>
           <rect
             x="155"
@@ -143,7 +143,7 @@ export default function SatelliteComm({
             fill="currentColor"
             opacity="0.8"
           />
-          {/* 太陽能板 */}
+          {/* Solar panel */}
           <rect
             x="150"
             y="58"
@@ -171,7 +171,7 @@ export default function SatelliteComm({
             fill="currentColor"
             opacity="0.8"
           />
-          {/* 太陽能板 */}
+          {/* Solar panel */}
           <rect
             x="150"
             y="28"
@@ -190,9 +190,9 @@ export default function SatelliteComm({
           />
         </g>
 
-        {/* 地面站 */}
+        {/* Ground station */}
         <g>
-          {/* 地面站基座 */}
+          {/* Ground station base */}
           <rect
             x="50"
             y="250"
@@ -204,7 +204,7 @@ export default function SatelliteComm({
             fill="currentColor"
             fillOpacity="0.3"
           />
-          {/* 天線 */}
+          {/* Antenna */}
           <path
             className="antenna"
             d="M65,250 Q65,240 75,240"
@@ -216,7 +216,7 @@ export default function SatelliteComm({
         </g>
 
         <g>
-          {/* 地面站基座 */}
+          {/* Ground station base */}
           <rect
             x="240"
             y="250"
@@ -228,7 +228,7 @@ export default function SatelliteComm({
             fill="currentColor"
             fillOpacity="0.3"
           />
-          {/* 天線 */}
+          {/* Antenna */}
           <path
             className="antenna"
             d="M255,250 Q255,240 245,240"
@@ -239,7 +239,7 @@ export default function SatelliteComm({
           />
         </g>
 
-        {/* 信號波 */}
+        {/* Signal wave */}
         {[0, 1, 2].map(index => (
           <circle
             key={`signal-wave-${index}`}
@@ -268,7 +268,7 @@ export default function SatelliteComm({
           />
         ))}
 
-        {/* 數據包傳輸 */}
+        {/* Data packet transmission */}
         {[0, 1, 2, 3].map(index => (
           <circle
             key={`data-packet-${index}`}
@@ -281,7 +281,7 @@ export default function SatelliteComm({
           />
         ))}
 
-        {/* 通訊連接線 */}
+        {/* Communication connection line */}
         <line
           x1="65"
           y1="250"
@@ -303,14 +303,14 @@ export default function SatelliteComm({
           strokeDasharray="2,2"
         />
 
-        {/* 標籤 */}
+        {/* Label */}
         <text
           x="160"
           y="20"
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          衛星通訊網路
+          Satellite Communication Network
         </text>
         <text
           x="65"
@@ -318,7 +318,7 @@ export default function SatelliteComm({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          地面站A
+          Ground Station A
         </text>
         <text
           x="255"
@@ -326,7 +326,7 @@ export default function SatelliteComm({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          地面站B
+          Ground Station B
         </text>
         <text
           x="160"
@@ -334,7 +334,7 @@ export default function SatelliteComm({
           textAnchor="middle"
           className="text-xs fill-current opacity-60"
         >
-          全球通訊覆蓋
+          Global Communication Coverage
         </text>
       </svg>
     </div>
