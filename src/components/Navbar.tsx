@@ -20,6 +20,10 @@ export default function Navbar({ activeTab, onTabChange }: NavbarProps) {
     { id: 'dna', label: 'DNA Analysis', icon: '🧬' },
     { id: 'radar', label: 'Radar System', icon: '📡' },
     { id: 'hologram', label: 'Hologram Projection', icon: '🔮' },
+    { id: 'ai-sim', label: 'AI Simulation', icon: '🤖' },
+    { id: 'vr-interface', label: 'VR Interface', icon: '👓' },
+    { id: 'energy-grid', label: 'Energy Grid', icon: '🔋' },
+    { id: 'biotech-lab', label: 'Biotech Lab', icon: '🧫' },
   ]
 
   return (

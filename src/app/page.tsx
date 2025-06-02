@@ -12,6 +12,10 @@ import SatelliteComm from '@/components/SatelliteComm'
 import DNAAnalysis from '@/components/DNAAnalysis'
 import RadarSystem from '@/components/RadarSystem'
 import HologramProjection from '@/components/HologramProjection'
+import AISimulation from '@/components/AISimulation'
+import VRInterface from '@/components/VRInterface'
+import EnergyGrid from '@/components/EnergyGrid'
+import BiotechLab from '@/components/BiotechLab'
 
 export default function Home() {
   const root = useRef(null)
@@ -283,6 +287,49 @@ export default function Home() {
               <HologramProjection size={200} />
               <HologramProjection size={200} />
             </div> */}
+          </main>
+        )
+      case 'ai-sim':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <h1 className="text-3xl font-bold">AI Simulation Animation</h1>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
+              Visualize the signal transmission process of neural networks,
+              demonstrating the application of cognitive science in
+              human-machine interface design.
+            </p>
+            <AISimulation size={400} />
+          </main>
+        )
+      case 'vr-interface':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <h1 className="text-3xl font-bold">VR Interface Animation</h1>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
+              Demonstrate VR interface interactions with scaling and flashing
+              effects.
+            </p>
+            <VRInterface size={400} />
+          </main>
+        )
+      case 'energy-grid':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <h1 className="text-3xl font-bold">Energy Grid Animation</h1>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
+              Show energy flow in a grid with pulsing lines.
+            </p>
+            <EnergyGrid size={400} />
+          </main>
+        )
+      case 'biotech-lab':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <h1 className="text-3xl font-bold">Biotech Lab Animation</h1>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
+              Visualize molecular structures rotating and scaling.
+            </p>
+            <BiotechLab size={400} />
           </main>
         )
       default:
