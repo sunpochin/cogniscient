@@ -1,66 +1,26 @@
 'use client'
-import { animate, createScope, Scope, stagger } from 'animejs'
-import { useEffect, useRef } from 'react'
+import { animate, createScope, Scope } from 'animejs'
+import { useEffect, useRef, useState } from 'react'
+import Navbar from '@/components/Navbar'
+import MechanicalDevice from '@/components/MechanicalDevice'
+import ParticleSystem from '@/components/ParticleSystem'
+import NeuralNetwork from '@/components/NeuralNetwork'
+import MedicalDevice from '@/components/MedicalDevice'
+import IndustrialControl from '@/components/IndustrialControl'
+import QuantumComputing from '@/components/QuantumComputing'
+import SatelliteComm from '@/components/SatelliteComm'
+import DNAAnalysis from '@/components/DNAAnalysis'
+import RadarSystem from '@/components/RadarSystem'
+import HologramProjection from '@/components/HologramProjection'
 
 export default function Home() {
   const root = useRef(null)
   const scope = useRef<Scope | null>(null)
+  const [activeTab, setActiveTab] = useState('home')
 
   useEffect(() => {
     scope.current = createScope({ root }).add(self => {
       // Every anime.js instances declared here are now scopped to <div ref={root}>
-
-      // 複雜機械 3D 旋轉動畫
-      // 外圈旋轉
-      animate('.outer-ring', {
-        rotate: 360,
-        duration: 8000,
-        loop: true,
-        ease: 'linear',
-      })
-
-      // 中圈反向旋轉
-      animate('.middle-ring', {
-        rotate: -360,
-        duration: 6000,
-        loop: true,
-        ease: 'linear',
-      })
-
-      // 內圈快速旋轉
-      animate('.inner-ring', {
-        rotate: 360,
-        duration: 3000,
-        loop: true,
-        ease: 'linear',
-      })
-
-      // 機械臂旋轉
-      animate('.mechanical-arm', {
-        rotate: 360,
-        duration: 10000,
-        loop: true,
-        ease: 'linear',
-        delay: stagger(500), // 延遲啟動
-      })
-
-      // 小齒輪組
-      animate('.gear', {
-        rotate: 360,
-        duration: 2000,
-        loop: true,
-        ease: 'linear',
-        delay: stagger(200),
-      })
-
-      // 3D 效果 - 縮放脈動
-      animate('.pulse-element', {
-        scale: [1, 1.1, 1],
-        duration: 4000,
-        loop: true,
-        ease: 'inOutQuad',
-        delay: stagger(300),
-      })
 
       self.add('rotateLogo', i => {
         animate('.logo', {
@@ -79,180 +39,240 @@ export default function Home() {
     }
   }, [])
 
+  // 渲染不同標籤頁的內容
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case 'home':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 max-w-4xl">
+              從認知神經科學角度出發，專注於複雜系統的人機界面設計，例如直線粒子加速器、大型醫療設備，以及大型礦場鑽油設施。我們提供低調科技感的解決方案，幫助客戶優化人機互動。
+            </p>
+
+            {/* 複雜機械 3D 旋轉裝置 */}
+            <MechanicalDevice size={320} />
+
+            <div className="flex gap-4 items-center flex-col sm:flex-row mt-8">
+              <a
+                className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+                href="/contact"
+              >
+                聯絡我們
+              </a>
+            </div>
+
+            {/* Hero Section */}
+            <section className="bg-black text-white w-full rounded-lg p-12 mt-12">
+              <div className="flex flex-col justify-center items-center text-center">
+                <h1 className="text-4xl md:text-6xl font-bold tracking-widest text-blue-300 hero-text mb-6">
+                  {'COGNITIVE INTERFACE'.split('').map((letter, index) => (
+                    <span key={index} className="inline-block opacity-0">
+                      {letter === ' ' ? '\u00A0' : letter}
+                    </span>
+                  ))}
+                </h1>
+                <p className="text-gray-400 max-w-xl text-lg">
+                  Applying neuroscience to the world&apos;s most complex
+                  human-machine systems.
+                </p>
+              </div>
+
+              {/* Use Cases Section */}
+              <div className="grid md:grid-cols-3 gap-8 mt-16">
+                <div className="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition">
+                  <h2 className="text-xl font-semibold text-blue-200">
+                    Linear Particle Accelerators
+                  </h2>
+                  <p className="text-sm text-gray-400 mt-2">
+                    Optimizing operator cognition under extreme conditions.
+                  </p>
+                </div>
+                <div className="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition">
+                  <h2 className="text-xl font-semibold text-blue-200">
+                    Advanced Medical Devices
+                  </h2>
+                  <p className="text-sm text-gray-400 mt-2">
+                    Designing intuitive UIs for complex diagnostic workflows.
+                  </p>
+                </div>
+                <div className="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition">
+                  <h2 className="text-xl font-semibold text-blue-200">
+                    Oil Drilling Systems
+                  </h2>
+                  <p className="text-sm text-gray-400 mt-2">
+                    Enhancing decision support for remote operations.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </main>
+        )
+      case 'mechanical':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <h1 className="text-3xl font-bold">機械裝置動畫</h1>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
+              複雜機械系統的 3D
+              旋轉動畫，展示多層次的機械運作原理，適用於工業控制系統和精密設備的人機界面設計。
+            </p>
+            <MechanicalDevice size={400} />
+            {/* <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <MechanicalDevice size={200} />
+              <MechanicalDevice size={200} />
+              <MechanicalDevice size={200} />
+            </div> */}
+          </main>
+        )
+      case 'particle':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <h1 className="text-3xl font-bold">粒子系統動畫</h1>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
+              模擬粒子加速器和高能物理實驗的動態視覺效果，展示粒子軌跡、能量波動和核心反應過程。
+            </p>
+            <ParticleSystem size={400} />
+            {/* <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <ParticleSystem size={200} />
+              <ParticleSystem size={200} />
+              <ParticleSystem size={200} />
+            </div> */}
+          </main>
+        )
+      case 'neural':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <h1 className="text-3xl font-bold">神經網路動畫</h1>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
+              視覺化神經網路的信號傳遞過程，展示認知科學在人機界面設計中的應用，適用於
+              AI 輔助決策系統。
+            </p>
+            <NeuralNetwork size={400} />
+            {/* <div className="grid md:grid-cols-2 gap-6 mt-8">
+              <NeuralNetwork size={300} />
+              <NeuralNetwork size={300} />
+            </div> */}
+          </main>
+        )
+      case 'medical':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <h1 className="text-3xl font-bold">醫療設備動畫</h1>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
+              模擬醫療監控設備的即時數據顯示，包括心電圖、生命體徵監控和診斷掃描系統的動態界面。
+            </p>
+            <MedicalDevice size={400} />
+            {/* <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <MedicalDevice size={200} />
+              <MedicalDevice size={200} />
+              <MedicalDevice size={200} />
+            </div> */}
+          </main>
+        )
+      case 'industrial':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <h1 className="text-3xl font-bold">工業控制動畫</h1>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
+              展示工業自動化系統的控制界面，包括管道流體監控、壓力溫度檢測和閥門控制系統的動態視覺化。
+            </p>
+            <IndustrialControl size={400} />
+            {/* <div className="grid md:grid-cols-2 gap-6 mt-8">
+              <IndustrialControl size={300} />
+              <IndustrialControl size={300} />
+            </div> */}
+          </main>
+        )
+      case 'quantum':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <h1 className="text-3xl font-bold">量子計算動畫</h1>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
+              展示量子位元、量子糾纏和量子門操作的視覺化效果，適用於量子計算研究和高端科學計算系統的人機界面設計。
+            </p>
+            <QuantumComputing size={400} />
+            {/* <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <QuantumComputing size={200} />
+              <QuantumComputing size={200} />
+              <QuantumComputing size={200} />
+            </div> */}
+          </main>
+        )
+      case 'satellite':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <h1 className="text-3xl font-bold">衛星通訊動畫</h1>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
+              模擬衛星軌道運行、信號傳輸和地面站通訊的動態效果，展示全球通訊網路和太空通訊系統的運作原理。
+            </p>
+            <SatelliteComm size={400} />
+            {/* <div className="grid md:grid-cols-2 gap-6 mt-8">
+              <SatelliteComm size={300} />
+              <SatelliteComm size={300} />
+            </div> */}
+          </main>
+        )
+      case 'dna':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <h1 className="text-3xl font-bold">DNA 分析動畫</h1>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
+              視覺化 DNA
+              雙螺旋結構、基因序列分析和蛋白質合成過程，適用於生物醫學研究設備和基因工程系統界面。
+            </p>
+            <DNAAnalysis size={400} />
+            {/* <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <DNAAnalysis size={200} />
+              <DNAAnalysis size={200} />
+              <DNAAnalysis size={200} />
+            </div> */}
+          </main>
+        )
+      case 'radar':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <h1 className="text-3xl font-bold">雷達系統動畫</h1>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
+              展示雷達掃描、目標檢測和追蹤系統的即時動態效果，適用於軍事防禦、航空管制和海事監控系統界面。
+            </p>
+            <RadarSystem size={400} />
+            <div className="grid md:grid-cols-2 gap-6 mt-8">
+              <RadarSystem size={300} />
+              <RadarSystem size={300} />
+            </div>
+          </main>
+        )
+      case 'hologram':
+        return (
+          <main className="flex flex-col gap-8 items-center text-center py-12">
+            <h1 className="text-3xl font-bold">全息投影動畫</h1>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
+              模擬 3D
+              全息影像投射、光束投影和立體顯示效果，展示未來顯示技術和虛擬實境系統的視覺化界面。
+            </p>
+            <HologramProjection size={400} />
+            {/* <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <HologramProjection size={200} />
+              <HologramProjection size={200} />
+              <HologramProjection size={200} />
+            </div> */}
+          </main>
+        )
+      default:
+        return null
+    }
+  }
+
   return (
-    <div
-      ref={root}
-      className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
-    >
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start text-center sm:text-left">
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
-          WL Consulting
-        </h1>
-        <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300">
-          WL Consulting
-          從認知神經科學角度出發，專注於複雜系統的人機界面設計，例如直線粒子加速器、大型醫療設備，以及大型礦場鑽油設施。我們提供低調科技感的解決方案，幫助客戶優化人機互動。
-        </p>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+      <Navbar activeTab={activeTab} onTabChange={setActiveTab} />
+      <div
+        ref={root}
+        className="container mx-auto px-4 py-8 font-[family-name:var(--font-geist-sans)]"
+      >
+        {renderTabContent()}
+      </div>
 
-        {/* 複雜機械 3D 旋轉裝置 */}
-        <div className="relative w-80 h-80 mx-auto">
-          <svg
-            className="absolute inset-0 w-full h-full"
-            viewBox="0 0 320 320"
-            stroke="currentColor"
-            fill="none"
-            strokeWidth="1"
-            opacity="0.6"
-          >
-            {/* 外圈 */}
-            <circle
-              className="outer-ring"
-              cx="160"
-              cy="160"
-              r="140"
-              strokeWidth="2"
-              opacity="0.3"
-            />
-            <circle
-              className="outer-ring"
-              cx="160"
-              cy="160"
-              r="130"
-              strokeWidth="1"
-              opacity="0.2"
-            />
-
-            {/* 中圈 */}
-            <circle
-              className="middle-ring pulse-element"
-              cx="160"
-              cy="160"
-              r="100"
-              strokeWidth="2"
-              opacity="0.4"
-            />
-            <circle
-              className="middle-ring"
-              cx="160"
-              cy="160"
-              r="90"
-              strokeWidth="1"
-              opacity="0.3"
-            />
-
-            {/* 內圈 */}
-            <circle
-              className="inner-ring pulse-element"
-              cx="160"
-              cy="160"
-              r="60"
-              strokeWidth="2"
-              opacity="0.5"
-            />
-            <circle
-              className="inner-ring"
-              cx="160"
-              cy="160"
-              r="50"
-              strokeWidth="1"
-              opacity="0.4"
-            />
-
-            {/* 機械臂 */}
-            <line
-              className="mechanical-arm"
-              x1="160"
-              y1="160"
-              x2="160"
-              y2="60"
-              strokeWidth="3"
-              opacity="0.6"
-            />
-            <line
-              className="mechanical-arm"
-              x1="160"
-              y1="160"
-              x2="260"
-              y2="160"
-              strokeWidth="3"
-              opacity="0.6"
-            />
-            <line
-              className="mechanical-arm"
-              x1="160"
-              y1="160"
-              x2="160"
-              y2="260"
-              strokeWidth="3"
-              opacity="0.6"
-            />
-            <line
-              className="mechanical-arm"
-              x1="160"
-              y1="160"
-              x2="60"
-              y2="160"
-              strokeWidth="3"
-              opacity="0.6"
-            />
-
-            {/* 小齒輪 */}
-            <circle
-              className="gear pulse-element"
-              cx="160"
-              cy="60"
-              r="15"
-              strokeWidth="2"
-              opacity="0.7"
-            />
-            <circle
-              className="gear pulse-element"
-              cx="260"
-              cy="160"
-              r="12"
-              strokeWidth="2"
-              opacity="0.7"
-            />
-            <circle
-              className="gear pulse-element"
-              cx="160"
-              cy="260"
-              r="18"
-              strokeWidth="2"
-              opacity="0.7"
-            />
-            <circle
-              className="gear pulse-element"
-              cx="60"
-              cy="160"
-              r="14"
-              strokeWidth="2"
-              opacity="0.7"
-            />
-
-            {/* 中心核心 */}
-            <circle
-              className="pulse-element"
-              cx="160"
-              cy="160"
-              r="20"
-              strokeWidth="3"
-              opacity="0.8"
-              fill="currentColor"
-              fillOpacity="0.1"
-            />
-          </svg>
-        </div>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="/contact"
-          >
-            聯絡我們
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center text-sm text-gray-500 dark:text-gray-400">
+      <footer className="flex gap-[24px] flex-wrap items-center justify-center text-sm text-gray-500 dark:text-gray-400 py-8">
         © 2025 WL Consulting
       </footer>
     </div>
