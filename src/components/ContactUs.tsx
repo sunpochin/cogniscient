@@ -6,9 +6,11 @@ const ContactUs = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [statusMessage, setStatusMessage] = useState('')
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setStatusMessage('')
     const response = await fetch('/api/contact', {
       method: 'POST',
       headers: {
@@ -18,12 +20,12 @@ const ContactUs = () => {
     })
 
     if (response.ok) {
-      alert('Message sent!')
+      setStatusMessage('Message sent!')
       setName('')
       setEmail('')
       setMessage('')
     } else {
-      alert('Error sending message.')
+      setStatusMessage('Error sending message.')
     }
   }
 
@@ -59,6 +61,11 @@ const ContactUs = () => {
           >
             Send
           </button>
+          {statusMessage && (
+            <p className="mt-4 text-center {statusMessage.includes('Error') ? 'text-red-500' : 'text-green-500'}">
+              {statusMessage}
+            </p>
+          )}
         </div>
       </form>
     </section>
