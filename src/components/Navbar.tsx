@@ -9,7 +9,6 @@ interface NavbarProps {
 
 export default function Navbar({ activeTab, onTabChange }: NavbarProps) {
   const tabs = [
-    { id: 'home', label: 'Home', icon: '🏠' },
     { id: 'mechanical', label: 'Mechanical Device', icon: '⚙️' },
     { id: 'particle', label: 'Particle System', icon: '🔬' },
     { id: 'neural', label: 'Neural Network', icon: '🧠' },
