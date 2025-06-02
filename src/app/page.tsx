@@ -16,6 +16,8 @@ import AISimulation from '@/components/AISimulation'
 import VRInterface from '@/components/VRInterface'
 import EnergyGrid from '@/components/EnergyGrid'
 import BiotechLab from '@/components/BiotechLab'
+import ContactUs from '@/components/ContactUs'
+import HeroSection from '@/components/HeroSection'
 
 export default function Home() {
   const root = useRef(null)
@@ -341,15 +343,16 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <Navbar activeTab={activeTab} onTabChange={setActiveTab} />
+      <HeroSection />
       <div
         ref={root}
         className="bg-gray-500 container mx-auto px-4 py-8 font-[family-name:var(--font-geist-sans)]"
       >
         {renderTabContent()}
       </div>
-
+      <ContactUs />
       <footer className="flex gap-[24px] flex-wrap items-center justify-center text-sm text-gray-500 dark:text-gray-400 py-8">
-        © 2025 WL Consulting
+        © 2025 Made with ❤️ by sunpochin@gmail.com
       </footer>
     </div>
   )
