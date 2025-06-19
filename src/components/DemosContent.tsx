@@ -11,7 +11,18 @@ export default function DemosContent() {
         experience and solving complex problems. Explore the demos to see our
         work in action and understand the potential of integrating these fields.
       </p>
-      <div className="w-full max-w-4xl aspect-video">
+      <div className="w-1/4 mx-auto aspect-video">
+        <h2>My life is a tragedy</h2>
+        <iframe
+          className="w-full h-full rounded-lg shadow-lg"
+          src="https://www.youtube.com/embed/deq_sMfpZuw?si=5uUsTUdvs8ZhbRKW"
+          title="Demo Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+      <div className="mt-10 w-1/4 mx-auto aspect-video">
+        <h2>Professor Tung</h2>
         <iframe
           className="w-full h-full rounded-lg shadow-lg"
           src="https://www.youtube.com/embed/2woNdScDUgM"
