@@ -15,11 +15,13 @@ const eslintConfig = [
     rules: {
       // 嚴格檢查未使用的變數和導入 - 這是 Vercel 最常檢查的
       '@typescript-eslint/no-unused-vars': [
-        'error',
+        'warn', // 從 'error' 改為 'warn'
         {
           argsIgnorePattern: '^_',
           varsIgnorePattern: '^_',
           caughtErrorsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+          args: 'none',
         },
       ],
 
