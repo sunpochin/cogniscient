@@ -1,6 +1,5 @@
 'use client'
-import {} from 'react'
-import Image from 'next/image'
+import { useState } from 'react'
 
 interface NavbarProps {
   activeTab: string
@@ -8,30 +7,54 @@ interface NavbarProps {
 }
 
 export default function Navbar({ activeTab, onTabChange }: NavbarProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const tabs = [
-    { id: 'home', label: 'Home', icon: '🏠' },
-    { id: 'research', label: 'Research', icon: '🔬' },
-    { id: 'demos', label: 'Demos', icon: '💡' },
+    { id: 'about', label: 'About Us' },
+    { id: 'services', label: 'Services' },
+    { id: 'members', label: 'Members' },
+    { id: 'articles', label: 'Articles' },
+    { id: 'contact', label: 'Contact Us' },
   ]
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-lg w-full fixed top-0 left-0 z-50">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        {/* Logo */}
-        <div className="flex items-center">
-          <Image
-            src="/logo.png"
-            alt="WL Consulting"
-            width={40}
-            height={40}
-            className="w-10 h-10"
-          />
-          <span className="ml-2 text-xl font-bold text-blue-600 dark:text-blue-400">
-            WL Consulting
-          </span>
+    <nav className="bg-white dark:bg-gray-900 w-full fixed top-0 left-0 z-50">
+      <div className="container flex items-center justify-between h-16 px-4">
+        <div className="flex-shrink-0">
+          {/* You can add a logo here */}
+          <span className="text-xl font-bold">Cogniscient</span>
         </div>
-        {/* 水平 tab */}
-        <div className="flex space-x-4">
+        {/* Hamburger Menu for Mobile */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-4">
           {tabs.map(tab => (
             <button
               key={tab.id}
@@ -42,12 +65,34 @@ export default function Navbar({ activeTab, onTabChange }: NavbarProps) {
                   : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
               }`}
             >
-              <span>{tab.icon}</span>
               <span>{tab.label}</span>
             </button>
           ))}
         </div>
       </div>
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            {tabs.map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => {
+                  onTabChange(tab.id)
+                  setIsMenuOpen(false)
+                }}
+                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  activeTab === tab.id
+                    ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
+                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   )
 }

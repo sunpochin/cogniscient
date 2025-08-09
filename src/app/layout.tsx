@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'WL Consulting - 認知神經科學與複雜系統人機界面',
+  title: 'Cogniscient - 認知神經科學與複雜系統人機界面',
   description:
-    'WL Consulting 從認知神經科學角度出發，專注於複雜系統人機界面，如直線粒子加速器、大型醫療設備和大規模礦場設施，提供低調科技感的顧問服務。',
+    'Cogniscient 從認知神經科學角度出發，專注於複雜系統人機界面，如直線粒子加速器、大型醫療設備和大規模礦場設施，提供低調科技感的顧問服務。',
 }
 
 export default function RootLayout({
