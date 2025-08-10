@@ -7,7 +7,7 @@ import HomeContent from '../components/HomeContent'
 export default function Home() {
   const root = useRef(null)
   const scope = useRef<any>(null)
-  const [activeTab, setActiveTab] = useState('home')
+  const [activeTab, setActiveTab] = useState('about')
 
   useEffect(() => {
     // Simple anime.js animation example
