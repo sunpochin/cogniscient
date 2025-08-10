@@ -54,25 +54,29 @@ const MacBookPro162: NextPage = () => {
         alt=""
         src="/68965769f66646c0820f873a19bc02b0-2@2x.png"
       />
-      <div className="absolute top-[63.461rem] left-[17rem] leading-[2.222rem] font-semibold inline-block w-[46.611rem] h-[23.917rem] text-[2.222rem]">
-        <Typography variant="inherit" variantMapping={{ inherit: 'span' }}>
-          Cogniscient
-        </Typography>
+      <section className="absolute top-[63.461rem] left-[17rem] w-[46.611rem]">
         <Typography
-          variant="inherit"
-          variantMapping={{ inherit: 'span' }}
-          sx={{ fontSize: '1.111rem' }}
+          variant="h1"
+          className="font-semibold"
+          sx={{ fontSize: '2.222rem', lineHeight: '2.222rem', mb: 2 }}
         >
-            is a consultancy working at the intersection of
-          artificial intelligence and human‑centered design. We apply deep
-          expertise in cognitive science, machine learning, computer science,
-          and mechanical engineering to advise your crafting of interactive
-          AI‑powered products that are intuitive, trustworthy, and efficient.
-          Whether you’re pursuing conversational interfaces or semi-autonomous
-          systems, we bridge the gap between complex models and the nuanced way
-          that people think, decide, and act.
+          Cogniscient{' '}
+          <Typography
+            component="span"
+            className="font-semibold"
+            sx={{ fontSize: '1.111rem' }}
+          >
+            is a consultancy working at the intersection of artificial
+            intelligence and human-centered design. We apply deep expertise in
+            cognitive science, machine learning, computer science, and
+            mechanical engineering to advise your crafting of interactive
+            AI-powered products that are intuitive, trustworthy, and efficient.
+            Whether you’re pursuing conversational interfaces or semi-autonomous
+            systems, we bridge the gap between a complex models and the nuanced
+            way that people think, decide, and act.
+          </Typography>
         </Typography>
-      </div>
+      </section>
       <div className="absolute top-[166.883rem] left-[41.694rem] leading-[2.222rem] font-semibold inline-block w-[39.25rem] h-[16.283rem]">
         <Typography className="!m-0" variant="inherit">
           We are currently seeking reference clients to help refine our
