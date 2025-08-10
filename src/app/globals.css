@@ -23,4 +23,250 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Navigation Styles */
+.navigation-menu {
+  display: flex;
+  gap: 33px;
+  align-items: center;
+}
+
+.nav-item {
+  color: #000;
+  font-family:
+    Montserrat,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+}
+
+/* Main Content Layout */
+.main-content-section {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin-top: 20px;
+}
+
+.background-decoration {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.decoration-image {
+  width: 618px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.logo-section {
+  position: absolute;
+  left: 208px;
+  top: 0;
+  z-index: 1;
+}
+
+.company-logo {
+  width: 470px;
+  height: 470px;
+  aspect-ratio: 1/1;
+}
+
+.main-title-section {
+  position: absolute;
+  left: 812px;
+  top: 225px;
+  z-index: 2;
+}
+
+.main-title {
+  width: 908px;
+  height: 82px;
+  color: #000;
+  font-family:
+    Montserrat,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+/* Client Stories Section */
+.client-stories-container {
+  display: flex;
+  width: 100%;
+  height: 346px;
+  margin-top: 138px;
+  overflow-x: auto;
+  gap: 25px;
+  padding-left: 0;
+}
+
+.client-story-card {
+  width: 556px;
+  height: 346px;
+  background: #7b8eb4;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-story-title {
+  width: 350px;
+  height: 88px;
+  color: #fff;
+  text-align: center;
+  font-family:
+    Montserrat,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1728px) {
+  .main-title-section {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-title {
+    width: 100%;
+    max-width: 908px;
+  }
+
+  .decoration-image {
+    width: 400px;
+    height: 400px;
+  }
+
+  .logo-section {
+    left: 50px;
+  }
+
+  .company-logo {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navigation-menu {
+    gap: 20px;
+  }
+
+  .nav-item {
+    font-size: 18px;
+  }
+
+  .main-content-section {
+    height: 400px;
+  }
+
+  .logo-section {
+    left: 20px;
+  }
+
+  .company-logo {
+    width: 250px;
+    height: 250px;
+  }
+
+  .main-title-section {
+    top: 150px;
+  }
+
+  .main-title {
+    font-size: 28px;
+  }
+
+  .decoration-image {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation-menu {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-item {
+    font-size: 16px;
+  }
+
+  .main-content-section {
+    height: 300px;
+  }
+
+  .background-decoration {
+    display: none;
+  }
+
+  .logo-section {
+    position: relative;
+    left: auto;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .company-logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .main-title-section {
+    position: relative;
+    left: auto;
+    top: auto;
+    text-align: center;
+    margin: 20px;
+  }
+
+  .main-title {
+    font-size: 24px;
+    width: 100%;
+  }
+
+  .client-stories-container {
+    flex-direction: column;
+    height: auto;
+    margin-top: 50px;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .client-story-card {
+    width: 100%;
+    height: 200px;
+  }
+
+  .client-story-title {
+    font-size: 24px;
+    width: 100%;
+  }
 }

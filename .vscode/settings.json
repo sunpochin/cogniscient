@@ -11,8 +11,34 @@
   ],
   "eslint.run": "onType",
   "typescript.preferences.includePackageJsonAutoImports": "off",
-  "editor.rulers": [80, 120],
+  "editor.rulers": [
+    80,
+    120
+  ],
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true
+  "files.trimFinalNewlines": true,
+  "detectedConfig": {
+    "typescript": true,
+    "naming": "Pascal Case",
+    "unit": "px",
+    "framework": "react",
+    "styling": "'Inline Styles"
+  },
+  "locofyConfig": {
+    "project": "Cogniscient (Copy)",
+    "id": "316Yoq1EC4aiU87ZFGjX43kyn5R",
+    "framework": "react-nextjs",
+    "typescript": true,
+    "tailwindAllowGenerateToken": true,
+    "styling": "Tailwind",
+    "unit": "rem",
+    "naming": "Kebab Case",
+    "path": "public/",
+    "componentsPath": "/Users/pac/codes/cogniscient/src/components",
+    "screensPath": "/Users/pac/codes/cogniscient/.next/server/pages",
+    "isVite": false,
+    "styleGuide": "CSS Variable",
+    "router": "app_router"
+  }
 }

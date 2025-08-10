@@ -1,24 +1,24 @@
-'use client'
-import type { NextPage } from 'next'
-import { useMemo, type CSSProperties } from 'react'
-import { Box, Typography } from '@mui/material'
+"use client";
+import type { NextPage } from "next";
+import { useMemo, type CSSProperties } from "react";
+import { Box, Typography } from "@mui/material";
 
 export type ClientStoryComponentType = {
-  className?: string
+  className?: string;
 
   /** Style props */
-  groupBoxLeft?: CSSProperties['left']
-}
+  groupBoxLeft?: CSSProperties["left"];
+};
 
 const ClientStoryComponent: NextPage<ClientStoryComponentType> = ({
-  className = '',
+  className = "",
   groupBoxLeft,
 }) => {
   const groupBoxStyle: CSSProperties = useMemo(() => {
     return {
       left: groupBoxLeft,
-    }
-  }, [groupBoxLeft])
+    };
+  }, [groupBoxLeft]);
 
   return (
     <Box
@@ -37,7 +37,7 @@ const ClientStoryComponent: NextPage<ClientStoryComponentType> = ({
         </div>
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default ClientStoryComponent
+export default ClientStoryComponent;
