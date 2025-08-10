@@ -48,7 +48,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <Navbar activeTab={activeTab} onTabChange={setActiveTab} />
       {/* <HeroSection /> */}
-      <div className="container mx-auto px-4 py-8 md:py-16 font-[family-name:var(--font-geist-sans)]">
+      <div className="container mx-auto px-4 py-8 md:py-16 pt-20 font-[family-name:var(--font-geist-sans)]">
         {content}
       </div>
       {/* <ContactUs /> */}
@@ -72,7 +72,7 @@ function ResearchContent() {
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 md:p-6">
         <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-4">人因工程</h3>
         <p className="text-sm md:text-base">
-          我們將人因工程學原理應用於界面設計，確保系統不僅功能強大，而且直觀、易於使用，並能最大程度地減少人為錯誤。
+          我們將人��工程學原理應用於界面設計，確保系統不僅功能強大，而且直觀、易於使用，並能最大程度地減少人為錯誤。
         </p>
       </div>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 md:p-6">
@@ -95,7 +95,7 @@ function DemosContent() {
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 md:p-6">
         <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-4">智慧電網監控</h3>
         <p className="text-sm md:text-base">
-          了解我們如何利用數據可視化和機器學習，協助電網運營商應對各種挑戰。
+          了解我們如何利用數���可視化和機器學習，協助電網運營商應對各種挑戰。
         </p>
       </div>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 md:p-6">
