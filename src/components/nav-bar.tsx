@@ -1,3 +1,8 @@
+/**
+ * @deprecated
+ * 導航列元件。
+ * 注意：這個元件目前使用絕對定位，是舊版設計的殘留，可能需要重構。
+ */
 "use client";
 import type { NextPage } from "next";
 import { useCallback } from "react";

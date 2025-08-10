@@ -1,3 +1,9 @@
+/**
+ * @deprecated
+ * 注意：這似乎是一個舊的導航列元件。
+ * 目前使用的是 /src/components/nav-bar.tsx，但兩者可能都需要根據新設計重構。
+ * 這個檔案可能可以被安全地移除。
+ */
 'use client'
 import { useState } from 'react'
 

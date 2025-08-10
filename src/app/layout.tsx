@@ -1,3 +1,8 @@
+/**
+ * @deprecated
+ * 注意：這似乎是一個舊的根佈局檔案，目前專案使用的是 /app/layout.tsx。
+ * 這個檔案可能可以被安全地移除。
+ */
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'

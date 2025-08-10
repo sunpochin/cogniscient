@@ -1,3 +1,8 @@
+/**
+ * @deprecated
+ * 注意：這似乎是一個舊的首頁內容元件。
+ * 這個檔案可能可以被安全地移除。
+ */
 import React from 'react'
 
 export default function HomeContent() {

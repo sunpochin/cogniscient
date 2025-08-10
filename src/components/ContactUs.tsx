@@ -1,3 +1,9 @@
+/**
+ * @deprecated
+ * 注意：這似乎是一個舊的聯絡表單元件。
+ * 目前首頁使用的是 /src/components/home/contact-us-section.tsx。
+ * 這個檔案可能可以被安全地移除。
+ */
 import React, { useState } from 'react'
 import dotenv from 'dotenv'
 dotenv.config()

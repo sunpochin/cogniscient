@@ -1,3 +1,8 @@
+/**
+ * @deprecated
+ * 注意：這似乎是一個舊的首頁元件，目前專案使用的是 /app/page.tsx。
+ * 這個檔案可能可以被安全地移除。
+ */
 'use client'
 import type { NextPage } from 'next'
 import { useMemo, type CSSProperties } from 'react'
