@@ -1,5 +1,5 @@
 'use client'
-import { animate, createScope, Scope } from 'animejs'
+import anime from 'animejs'
 import { useEffect, useRef, useState } from 'react'
 import Navbar from '@/components/Navbar'
 import HomeContent from '../components/HomeContent'
@@ -74,7 +74,7 @@ function ResearchContent() {
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 md:p-6">
         <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-4">複雜系統</h3>
         <p className="text-sm md:text-base">
-          我們的專業知識涵蓋各種複雜系統，包括但不限於：粒子加速器、核融合反應爐、電網控制中心、空中交通管制系統。
+          我們的專業知識涵蓋各種複雜系統，包括但不限於：粒子加速器、核融合反應爐、電網控制中��、空中交通管制系統。
         </p>
       </div>
     </div>
