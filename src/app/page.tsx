@@ -6,7 +6,7 @@ import HomeContent from '../components/HomeContent'
 
 export default function Home() {
   const root = useRef(null)
-  const scope = useRef<Scope | null>(null)
+  const scope = useRef<any>(null)
   const [activeTab, setActiveTab] = useState('home')
 
   useEffect(() => {
