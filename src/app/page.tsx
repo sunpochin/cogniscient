@@ -30,13 +30,17 @@ export default function Home() {
     }
   }, [])
 
-  // 根據 activeTab 顯示三個分頁內容
+  // 根據 activeTab 顯示分頁內容
   let content = null
-  if (activeTab === 'home') {
+  if (activeTab === 'about') {
     content = <HomeContent />
-  } else if (activeTab === 'research') {
+  } else if (activeTab === 'services') {
     content = <ResearchContent />
-  } else if (activeTab === 'demos') {
+  } else if (activeTab === 'members') {
+    content = <DemosContent />
+  } else if (activeTab === 'articles') {
+    content = <ResearchContent />
+  } else if (activeTab === 'contact') {
     content = <DemosContent />
   }
 
