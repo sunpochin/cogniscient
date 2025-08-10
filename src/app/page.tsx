@@ -1,48 +1,183 @@
 /**
- * @deprecated
- * 注意：這似乎是一個舊的首頁元件，目前專案使用的是 /app/page.tsx。
- * 這個檔案可能可以被安全地移除。
+ * 首頁的主要進入點。
+ * 這個元件負責組合並渲染構成首頁的各個區塊(Section)元件。
  */
 'use client'
 import type { NextPage } from 'next'
-import { useMemo, type CSSProperties } from 'react'
-import { Box, Typography } from '@mui/material'
+import { useCallback } from 'react'
+import { Typography, Box } from '@mui/material'
+import Image from 'next/image'
+import NavBar from '../components/nav-bar'
+import ClientStoryComponent from '../components/client-story-component'
 
-export type ClientStoryComponentType = {
-  className?: string
-
-  /** Style props */
-  groupBoxLeft?: CSSProperties['left']
-}
-
-const ClientStoryComponent: NextPage<ClientStoryComponentType> = ({
-  className = '',
-  groupBoxLeft,
-}) => {
-  const groupBoxStyle: CSSProperties = useMemo(() => {
-    return {
-      left: groupBoxLeft,
-    }
-  }, [groupBoxLeft])
+const MacBookPro162: NextPage = () => {
+  const onRectangleClick = useCallback(() => {
+    // Please sync "MacBook Pro 16" - 3" to the project
+  }, [])
 
   return (
-    <Box
-      className={`absolute top-[0rem] left-[0rem] w-[30.911rem] h-[19.222rem] text-center text-[2rem] text-[#fff] font-[Montserrat] ${className}`}
-      style={groupBoxStyle}
-    >
-      <Box className="absolute top-[0rem] left-[0rem] w-[30.911rem] h-[19.222rem]">
-        <Box className="absolute top-[0rem] left-[0rem] bg-[#7b8eb5] w-[30.911rem] h-[19.222rem]" />
-        <div className="absolute top-[7.167rem] left-[5.722rem] font-semibold inline-block w-[19.444rem] h-[4.889rem]">
-          <Typography className="!m-0" variant="inherit">
-            Client
+    <Box className="w-full relative bg-[#fff] h-[338.889rem] overflow-hidden text-left text-[1.111rem] text-[#000] font-[Montserrat]">
+      <Image
+        className="absolute top-[0rem] left-[61.667rem] w-[34.333rem] h-[77.389rem] overflow-hidden"
+        width={618}
+        height={1393}
+        sizes="100vw"
+        alt=""
+        src="/layer-2.svg"
+      />
+      <Image
+        className="absolute top-[77.389rem] left-[61.667rem] w-[34.333rem] h-[77.389rem] overflow-hidden"
+        width={618}
+        height={1393}
+        sizes="100vw"
+        alt=""
+        src="/layer-2.svg"
+      />
+      <Image
+        className="absolute top-[154.778rem] left-[61.667rem] w-[34.333rem] h-[77.389rem] overflow-hidden"
+        width={618}
+        height={1393}
+        sizes="100vw"
+        alt=""
+        src="/layer-2.svg"
+      />
+      <Image
+        className="absolute top-[232.167rem] left-[61.667rem] w-[34.333rem] h-[77.389rem] overflow-hidden"
+        width={618}
+        height={1393}
+        sizes="100vw"
+        alt=""
+        src="/layer-2.svg"
+      />
+      <NavBar />
+      <Image
+        className="absolute top-[0rem] left-[5.611rem] w-[10.556rem] h-[10.556rem] object-cover"
+        width={190}
+        height={190}
+        sizes="100vw"
+        alt=""
+        src="/68965769f66646c0820f873a19bc02b0-2@2x.png"
+      />
+      <section className="absolute top-[63.461rem] left-[17rem] w-[46.611rem]">
+        <Typography
+          variant="h1"
+          className="font-semibold"
+          sx={{ fontSize: '2.222rem', lineHeight: '2.222rem', mb: 2 }}
+        >
+          Cogniscient{' '}
+          <Typography
+            component="span"
+            className="font-semibold"
+            sx={{ fontSize: '1.111rem' }}
+          >
+            is a consultancy working at the intersection of artificial
+            intelligence and human-centered design. We apply deep expertise in
+            cognitive science, machine learning, computer science, and
+            mechanical engineering to advise your crafting of interactive
+            AI-powered products that are intuitive, trustworthy, and efficient.
+            Whether you’re pursuing conversational interfaces or semi-autonomous
+            systems, we bridge the gap between a complex models and the nuanced
+            way that people think, decide, and act.
           </Typography>
-          <Typography className="!m-0" variant="inherit">
-            Story
-          </Typography>
-        </div>
+        </Typography>
+      </section>
+      <div className="absolute top-[166.883rem] left-[41.694rem] leading-[2.222rem] font-semibold inline-block w-[39.25rem] h-[16.283rem]">
+        <Typography className="!m-0" variant="inherit">
+          We are currently seeking reference clients to help refine our
+          offerings. You will receive comprehensive consulting services,
+          including research, design, and technical integration—at no cost(*).
+          All we ask for is feedback, and, if you&apos;re happy with our
+          efforts, permission to either show your logo on our web page, or to
+          refer potential future clients to you for private recommendation. (*
+          For reference clients we would only charge back expenses, such as
+          travel if the work could not be carried out remotely ... And we always
+          fly coach! :-)
+        </Typography>
+      </div>
+      <div className="absolute top-[136.378rem] left-[17rem] leading-[2.222rem] font-semibold inline-block w-[35.789rem] h-[16.283rem]">
+        We are currently seeking reference clients to help refine our offerings.
+        You will receive comprehensive consulting services, including research,
+        design, and technical integration—at no cost(*). All we ask for is
+        feedback, and, if you&apos;re happy with our efforts,
+      </div>
+      <div className="absolute top-[96.556rem] left-[41.506rem] leading-[2.222rem] font-semibold inline-block w-[39.439rem] h-[22.267rem]">
+        <Typography className="!m-0" variant="inherit">
+          We are currently seeking reference clients to help refine our
+          offerings. You will receive comprehensive consulting services,
+          including research, design, and technical integration—at no cost(*).
+          All we ask for is feedback, and, if you&apos;re happy with our
+          efforts, permission to either show your logo on our web page, or to
+          refer potential future clients to you for private recommendation. (*
+          For reference clients we would only charge back expenses, such as
+          travel if the work could not be carried out remotely ... And we always
+          fly coach! :-)
+        </Typography>
+      </div>
+      <div className="absolute top-[132.117rem] left-[calc(50%_-_567.5px)] text-[2rem] font-semibold inline-block w-[50.444rem] h-[4.556rem]">
+        Who are Cognition-Centered AI UX For?
+      </div>
+      <div className="absolute top-[93.5rem] left-[calc(50%_-_136px)] text-[2rem] font-semibold inline-block w-[50.444rem] h-[4.556rem]">
+        What’s Cognition-Centered AI UX?
+      </div>
+      <div className="absolute top-[163.572rem] left-[calc(50%_-_138.5px)] text-[2rem] font-semibold inline-block w-[50.444rem] h-[4.556rem]">
+        Start Your Journey Today
+      </div>
+      <div className="absolute top-[198.444rem] left-[calc(50%_-_567.5px)] text-[2rem] font-semibold inline-block w-[50.444rem] h-[4.556rem]">
+        Our Services
+      </div>
+      <div className="absolute top-[203rem] left-[16.472rem] font-semibold inline-block w-[60.667rem] h-[10.278rem]">
+        Our unique methodology begins with detailed one-on-one user studies
+        (sometimes called &quot;protocol analysis&quot;) and brings in
+        statistical and computational modeling. We are recognized leaders in the
+        application of computational modeling to UX analysis. We cover the full
+        product lifecycle—strategic opportunity mapping, evidence‑based UX
+        research, rapid prototyping of intelligent interactions, and rigorous
+        human‑in‑the‑loop evaluation.
+      </div>
+      <div className="absolute top-[256.506rem] left-[16.794rem] font-semibold inline-block w-[59.372rem] h-[10.278rem]">
+        Each of our analysts holds a PhD in cognitive science, computer science,
+        mechanical engineering, or a related field. Some have served as senior
+        faculty at leading research universities, some have personally launched
+        multiple AI‑based startups, and all have experience consulting with
+        organizations ranging from single person startups to large-scale
+        government organzations. Our blend of academic rigor, entrepreneurial
+        experience, and hard core engineering expertise informs every
+        engagement.
+      </div>
+      <Box
+        className="absolute top-[230.656rem] left-[16.794rem] bg-[#51a0ef] w-[59.333rem] h-[20.478rem] cursor-pointer"
+        onClick={onRectangleClick}
+      />
+      <div className="absolute top-[223.678rem] left-[calc(50%_-_573px)] text-[2rem] font-semibold inline-block w-[50.444rem] h-[4.556rem]">{`Who Are Cogniscient `}</div>
+      <Box className="absolute top-[292.5rem] left-[20.411rem] bg-[#dcebff] w-[22.283rem] h-[3.144rem]" />
+      <div className="absolute top-[293.444rem] left-[21.339rem] text-[#5d85b9] inline-block w-[6.044rem] h-[1.261rem]">
+        Name
+      </div>
+      <Box className="absolute top-[297.006rem] left-[20.411rem] bg-[#dcebff] w-[49.45rem] h-[3.144rem]" />
+      <Box className="absolute top-[301.517rem] left-[20.411rem] bg-[#dcebff] w-[49.45rem] h-[20.083rem]" />
+      <div className="absolute top-[297.95rem] left-[21.339rem] text-[#5d85b9] inline-block w-[6.044rem] h-[1.339rem]">
+        Email
+      </div>
+      <div className="absolute top-[302.461rem] left-[21.339rem] text-[#5d85b9] inline-block w-[10.344rem] h-[1.261rem]">
+        The message
+      </div>
+      <div className="absolute top-[322.306rem] left-[51.467rem] text-[0.667rem] text-[#5d85b9] inline-block w-[21.039rem] h-[0.789rem]">
+        You will receive a copy of the message after you submit
+      </div>
+      <div className="absolute top-[309.95rem] left-[33.25rem] text-[1.333rem] font-semibold">
+        We look forward to hear from you!
+      </div>
+      <div className="absolute top-[285.933rem] left-[20.411rem] text-[3.556rem] font-semibold">
+        Contact Us
+      </div>
+      <Box className="absolute top-[20.561rem] left-[-15.872rem] w-[127.744rem] h-[19.222rem]">
+        <ClientStoryComponent />
+        <ClientStoryComponent groupBoxLeft="32.278rem" />
+        <ClientStoryComponent groupBoxLeft="64.556rem" />
+        <ClientStoryComponent groupBoxLeft="96.833rem" />
       </Box>
     </Box>
   )
 }
 
-export default ClientStoryComponent
+export default MacBookPro162
