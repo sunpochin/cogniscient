@@ -82,7 +82,7 @@ const MacBookPro162: NextPage = () => {
           We are currently seeking reference clients to help refine our
           offerings. You will receive comprehensive consulting services,
           including research, design, and technical integration—at no cost(*).
-          All we ask for is feedback, and, if you're happy with our efforts,
+          All we ask for is feedback, and, if you&apos;re happy with our efforts,
           permission to either show your logo on our web page, or to refer
           potential future clients to you for private recommendation. (* For
           reference clients we would only charge back expenses, such as travel
@@ -94,14 +94,14 @@ const MacBookPro162: NextPage = () => {
         We are currently seeking reference clients to help refine our offerings.
         You will receive comprehensive consulting services, including research,
         design, and technical integration—at no cost(*). All we ask for is
-        feedback, and, if you're happy with our efforts,
+        feedback, and, if you&apos;re happy with our efforts,
       </div>
       <div className="absolute top-[96.556rem] left-[41.506rem] leading-[2.222rem] font-semibold inline-block w-[39.439rem] h-[22.267rem]">
         <Typography className="!m-0" variant="inherit">
           We are currently seeking reference clients to help refine our
           offerings. You will receive comprehensive consulting services,
           including research, design, and technical integration—at no cost(*).
-          All we ask for is feedback, and, if you're happy with our efforts,
+          All we ask for is feedback, and, if you&apos;re happy with our efforts,
           permission to either show your logo on our web page, or to refer
           potential future clients to you for private recommendation. (* For
           reference clients we would only charge back expenses, such as travel
@@ -123,7 +123,7 @@ const MacBookPro162: NextPage = () => {
       </div>
       <div className="absolute top-[203rem] left-[16.472rem] font-semibold inline-block w-[60.667rem] h-[10.278rem]">
         Our unique methodology begins with detailed one-on-one user studies
-        (sometimes called "protocol analysis") and brings in statistical and
+        (sometimes called &quot;protocol analysis&quot;) and brings in statistical and
         computational modeling. We are recognized leaders in the application of
         computational modeling to UX analysis. We cover the full product
         lifecycle—strategic opportunity mapping, evidence‑based UX research,
