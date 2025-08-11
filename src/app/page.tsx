@@ -10,6 +10,7 @@ import Image from 'next/image'
 import NavBar from '../components/Navbar'
 // import ClientStoriesCarousel from '../components/client-stories-carousel';
 import AboutUsSection from '../components/home/about-us-section'
+import SideDecoration from '../components/side-decoration'
 
 const MacBookPro162: NextPage = () => {
   const onRectangleClick = useCallback(() => {
@@ -18,41 +19,12 @@ const MacBookPro162: NextPage = () => {
 
   return (
     <Box className="w-full relative bg-[#fff] h-[338.889rem] overflow-hidden text-left text-[1.111rem] text-[#000] font-[Montserrat]">
+      <div className="mr-40">
+        <NavBar />
+      </div>
       <Box className="mt-80">{/* <ClientStoriesCarousel /> */}</Box>
 
-      <Image
-        className="absolute top-[0rem] left-[61.667rem] w-[34.333rem] h-[77.389rem] overflow-hidden"
-        width={618}
-        height={1393}
-        sizes="100vw"
-        alt=""
-        src="/layer-2.svg"
-      />
-      <Image
-        className="absolute top-[77.389rem] left-[61.667rem] w-[34.333rem] h-[77.389rem] overflow-hidden"
-        width={618}
-        height={1393}
-        sizes="100vw"
-        alt=""
-        src="/layer-2.svg"
-      />
-      <Image
-        className="absolute top-[154.778rem] left-[61.667rem] w-[34.333rem] h-[77.389rem] overflow-hidden"
-        width={618}
-        height={1393}
-        sizes="100vw"
-        alt=""
-        src="/layer-2.svg"
-      />
-      <Image
-        className="absolute top-[232.167rem] left-[61.667rem] w-[34.333rem] h-[77.389rem] overflow-hidden"
-        width={618}
-        height={1393}
-        sizes="100vw"
-        alt=""
-        src="/layer-2.svg"
-      />
-      <NavBar />
+      <SideDecoration />
       <Image
         className="absolute top-[0rem] left-[5.611rem] w-[10.556rem] h-[10.556rem] object-cover"
         width={190}
