@@ -1,25 +1,31 @@
-/**
- * 「關於我們」區塊。
- * 介紹團隊的背景和專業知識。
- */
-import { Typography } from '@mui/material';
+import { Typography } from '@mui/material'
 
-export function AboutUsSection() {
+function AboutUsSection() {
   return (
-    <section className="text-center max-w-4xl w-full">
-      <Typography variant="h2" className="text-3xl md:text-4xl font-semibold mb-6">
-        Who Are Cogniscient
-      </Typography>
-      <Typography className="text-lg">
-        Each of our analysts holds a PhD in cognitive science, computer science,
-        mechanical engineering, or a related field. Some have served as senior
-        faculty at leading research universities, some have personally launched
-        multiple AI‑based startups, and all have experience consulting with
-        organizations ranging from single person startups to large-scale
-        government organzations. Our blend of academic rigor, entrepreneurial
-        experience, and hard core engineering expertise informs every
-        engagement.
+    <section>
+      <Typography
+        variant="h1"
+        className="font-semibold"
+        sx={{ fontSize: '2.222rem', lineHeight: '2.222rem', mb: 2 }}
+      >
+        Cogniscient{' '}
+        <Typography
+          component="span"
+          className="font-semibold"
+          sx={{ fontSize: '1.111rem' }}
+        >
+          is a consultancy working at the intersection of artificial
+          intelligence and human-centered design. We apply deep expertise in
+          cognitive science, machine learning, computer science, and mechanical
+          engineering to advise your crafting of interactive AI-powered products
+          that are intuitive, trustworthy, and efficient. Whether you’re
+          pursuing conversational interfaces or semi-autonomous systems, we
+          bridge the gap between a complex models and the nuanced way that
+          people think, decide, and act.
+        </Typography>
       </Typography>
     </section>
-  );
+  )
 }
+
+export default AboutUsSection
