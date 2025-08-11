@@ -1,16 +1,11 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
-const imageTops = [
-  '0rem',
-  '77.389rem',
-  '154.778rem',
-  '232.167rem',
-];
+const imageTops = ['0rem', '77.389rem', '154.778rem', '232.167rem']
 
 function DecorativeCarousel() {
   return (
     <>
-      {imageTops.map((top) => (
+      {imageTops.map(top => (
         <Image
           key={top}
           className={`absolute top-[${top}] left-[61.667rem] w-[34.333rem] h-[77.389rem] overflow-hidden`}
@@ -22,7 +17,7 @@ function DecorativeCarousel() {
         />
       ))}
     </>
-  );
+  )
 }
 
-export default DecorativeCarousel;
+export default DecorativeCarousel

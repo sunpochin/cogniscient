@@ -9,11 +9,11 @@
 
 請從 `package.json` 的 `scripts` 區塊確認以下指令是否正確。
 
-- **安裝依賴**: `npm install`
-- **啟動開發環境**: `npm run dev`
-- **建置專案**: `npm run build`
-- **執行測試**: `npm test` (如果有的話)
-- **程式碼檢查 (Linting)**: `npm run lint` (如果有的話)
+- **安裝依賴**: `yarn`
+- **啟動開發環境**: `yarn dev`
+- **建置專案**: `yarn build`
+- **執行測試**: `yarn test` (如果有的話)
+- **程式碼檢查 (Linting)**: `yarn lint` (如果有的話)
 
 ## 3. 程式碼風格與慣例
 
@@ -21,8 +21,9 @@
 - **風格**: 請遵循專案根目錄下的 `.prettierrc` 和 `eslint.config.mjs` 設定。
 - **元件**:
   - 新的 React 元件請建立在 `src/components/` 目錄下。
-  - 元件檔案請使用 `kebab-case.tsx` 命名 (例如: `nav-bar.tsx`)。
-  - 優先使用 `function` 關鍵字來宣告元件。
+  - 元件檔案請使用 `PascalCase.tsx` 命名 (例如: `NavBar.tsx`)。
+  - 優先使用 const 關鍵字來宣告元件。
+  - 優先使用 `const` 搭配箭頭函式來宣告元件。
 - **CSS**:
   - 使用 Tailwind CSS 進行樣式設計。
   - 全域樣式請參考 `src/app/globals.css`。
