@@ -18,11 +18,13 @@ const MacBookPro162: NextPage = () => {
   }, [])
 
   return (
-    <Box className="w-full relative bg-[#fff] h-[338.889rem] overflow-hidden text-left text-[1.111rem] text-[#000] font-[Montserrat]">
+    <Box className="w-full relative bg-[#fff] h-[338.889rem] text-left text-[1.111rem] text-[#000] font-[Montserrat]">
       <div className="mr-40">
         <NavBar />
       </div>
-      <Box className="mt-80">{/* <ClientStoriesCarousel /> */}</Box>
+      {/* <Box className="mt-80">
+        <ClientStoriesCarousel />
+      </Box> */}
 
       <SideDecoration />
       <Image
