@@ -1,6 +1,6 @@
 /**
  * 首頁的主要進入點。
- * 這個元件負責組合並渲染構成首頁的各個區塊(Section)元件。
+ * 這個元件負責組合並渲染構成首頁的各個區塊 ( Section ) 元件。
  */
 'use client'
 import type { NextPage } from 'next'
@@ -10,47 +10,17 @@ import Image from 'next/image'
 import NavBar from '../components/nav-bar'
 import ClientStoryComponent from '../components/client-story-component'
 import AboutUsSection from '../components/home/about-us-section'
+import DecorativeCarousel from '../components/decorative-carousel'
 
-const MacBookPro162: NextPage = () => {
+const HomePage: NextPage = () => {
   const onRectangleClick = useCallback(() => {
     // Please sync "MacBook Pro 16" - 3" to the project
   }, [])
 
   return (
     <Box className="w-full relative bg-[#fff] h-[338.889rem] overflow-hidden text-left text-[1.111rem] text-[#000] font-[Montserrat]">
-      <Image
-        className="absolute top-[0rem] left-[61.667rem] w-[34.333rem] h-[77.389rem] overflow-hidden"
-        width={618}
-        height={1393}
-        sizes="100vw"
-        alt=""
-        src="/layer-2.svg"
-      />
-      <Image
-        className="absolute top-[77.389rem] left-[61.667rem] w-[34.333rem] h-[77.389rem] overflow-hidden"
-        width={618}
-        height={1393}
-        sizes="100vw"
-        alt=""
-        src="/layer-2.svg"
-      />
-      <Image
-        className="absolute top-[154.778rem] left-[61.667rem] w-[34.333rem] h-[77.389rem] overflow-hidden"
-        width={618}
-        height={1393}
-        sizes="100vw"
-        alt=""
-        src="/layer-2.svg"
-      />
-      <Image
-        className="absolute top-[232.167rem] left-[61.667rem] w-[34.333rem] h-[77.389rem] overflow-hidden"
-        width={618}
-        height={1393}
-        sizes="100vw"
-        alt=""
-        src="/layer-2.svg"
-      />
       <NavBar />
+      <DecorativeCarousel />
       <Image
         className="absolute top-[0rem] left-[5.611rem] w-[10.556rem] h-[10.556rem] object-cover"
         width={190}
@@ -161,4 +131,4 @@ const MacBookPro162: NextPage = () => {
   )
 }
 
-export default MacBookPro162
+export default HomePage

@@ -3,23 +3,23 @@
  * 導航列元件。
  * 注意：這個元件目前使用絕對定位，是舊版設計的殘留，可能需要重構。
  */
-"use client";
-import type { NextPage } from "next";
-import { useCallback } from "react";
-import { Box } from "@mui/material";
+'use client'
+import type { NextPage } from 'next'
+import { useCallback } from 'react'
+import { Box } from '@mui/material'
 
 export type NavBarType = {
-  className?: string;
-};
+  className?: string
+}
 
-const NavBar: NextPage<NavBarType> = ({ className = "" }) => {
+const NavBar: NextPage<NavBarType> = ({ className = '' }) => {
   const onMembersTextClick = useCallback(() => {
     // Please sync "MacBook Pro 16" - 3" to the project
-  }, []);
+  }, [])
 
   const onArticlesTextClick = useCallback(() => {
     // Please sync "MacBook Pro 16" - 5" to the project
-  }, []);
+  }, [])
 
   return (
     <Box
@@ -45,7 +45,7 @@ const NavBar: NextPage<NavBarType> = ({ className = "" }) => {
         Services
       </div>
     </Box>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar
