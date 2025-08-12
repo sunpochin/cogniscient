@@ -33,13 +33,13 @@ const ArticlesPage = () => {
   return (
     <div>
       <NavBar />
-      <div className="min-h-screen bg-gray-50 py-12 px-4">
+      <div className="min-h-screen bg-gray-50 py-8 md:py-12 px-4">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 md:mb-12">
             Featured Articles
           </h1>
           
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4">
             {articles.map((article) => (
               <div 
                 key={article.id} 
@@ -55,12 +55,12 @@ const ArticlesPage = () => {
                   />
                 </div>
                 
-                <div className="p-4">
-                  <h2 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
+                <div className="p-4 md:p-4">
+                  <h2 className="text-base md:text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
                     {article.title}
                   </h2>
                   
-                  <p className="text-gray-600 text-xs leading-relaxed mb-3 line-clamp-3">
+                  <p className="text-gray-600 text-xs md:text-xs leading-relaxed mb-3 line-clamp-3">
                     {article.description}
                   </p>
                   
