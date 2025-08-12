@@ -9,29 +9,33 @@ import { Box } from '@mui/material'
 import Image from 'next/image'
 import NavBar from '../components/Navbar'
 // import ClientStoriesCarousel from '../components/client-stories-carousel';
-import AboutUsSection from '../components/home/about-us-section'
+import AboutCogniscient from '../components/AboutCogniscient'
 import SideDecoration from '../components/side-decoration'
 import WhatIsAIUX from '../components/WhatIsAIUX'
 import WhoAreAIUXFor from '../components/WhoAreAIUXFor'
 import StartYourJourney from '../components/StartYourJourney'
 import OurServices from '../components/OurServices'
 import WhoAreWe from '../components/WhoAreWe'
+import ContactForm from '../components/ContactForm'
 
 const MacBookPro162: NextPage = () => {
   const onRectangleClick = useCallback(() => {
     // Please sync "MacBook Pro 16" - 3" to the project
   }, [])
 
+  // <Box className="w-full relative h-[338.889rem] text-left text-[1.111rem] text-[#000] font-[Montserrat]">
+
   return (
-    <Box className="w-full relative bg-[#fff] h-[338.889rem] text-left text-[1.111rem] text-[#000] font-[Montserrat]">
-      <div className="mr-40">
+    <Box className="w-full relative text-left text-[1.111rem] text-[#000] font-[Montserrat]">
+      <div className="">
         <NavBar />
       </div>
       {/* <Box className="mt-80">
         <ClientStoriesCarousel />
       </Box> */}
-
-      <SideDecoration />
+      <div className="">
+        <SideDecoration />
+      </div>
       <Image
         className="absolute top-[0rem] left-[5.611rem] w-[10.556rem] h-[10.556rem] object-cover"
         width={190}
@@ -40,27 +44,26 @@ const MacBookPro162: NextPage = () => {
         alt=""
         src="/cogniscient.png"
       />
-      <div className="mt-30 w-4/5 mx-auto z-20">
-        <AboutUsSection />
-      </div>
-      <div className="mt-10 ">
+      <div className="mt-30 w-4/4 relative z-10">
+        <AboutCogniscient />
+        {/* 讓組件本身處理背景
+         */}
+      </div>{' '}
+      <div className="mt-30 w-4/4 relative z-10">
         <WhatIsAIUX />
       </div>
-      <div className="mt-10 ">
+      <div className="mt-30 w-4/4 relative z-10">
         <WhoAreAIUXFor />
       </div>
-      <div className="mt-10 ">
+      <div className="mt-30 w-4/4 relative z-10">
         <StartYourJourney />
       </div>
-      <div className="mt-10 ">
+      <div className="mt-30 w-4/4 relative z-10">
         <OurServices />
       </div>
       <WhoAreWe />
-      <Box
-        className="absolute top-[230.656rem] left-[16.794rem] bg-[#51a0ef] w-[59.333rem] h-[20.478rem] cursor-pointer"
-        onClick={onRectangleClick}
-      />
-      <Box className="absolute top-[292.5rem] left-[20.411rem] bg-[#dcebff] w-[22.283rem] h-[3.144rem]" />
+      <ContactForm />
+      {/* <Box className="bg-[#dcebff]" />
       <div className="absolute top-[293.444rem] left-[21.339rem] text-[#5d85b9] inline-block w-[6.044rem] h-[1.261rem]">
         Name
       </div>
@@ -80,7 +83,7 @@ const MacBookPro162: NextPage = () => {
       </div>
       <div className="absolute top-[285.933rem] left-[20.411rem] text-[3.556rem] font-semibold">
         Contact Us
-      </div>
+      </div> */}
     </Box>
   )
 }

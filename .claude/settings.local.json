@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:docs.anthropic.com)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(grep:*)"
     ]
   },
   "enableAllProjectMcpServers": false
