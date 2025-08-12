@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState } from 'react'
 import { Box } from '@mui/material'
 import type { FC } from 'react'
 import Link from 'next/link'
@@ -27,7 +27,7 @@ const NavBar: FC<NavBarType> = ({ className = '' }) => {
   return (
     <Box
       component="header"
-      className={`w-full flex justify-between items-center px-4 sm:px-8 py-4 bg-white relative ${className}`}
+      className={`w-full flex justify-end items-center px-4 sm:px-8 py-4 bg-white relative ${className}`}
     >
       {/* Logo */}
       {/* <div className="text-xl font-bold">

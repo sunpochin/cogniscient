@@ -9,13 +9,14 @@ import { Box } from '@mui/material'
 import Image from 'next/image'
 import NavBar from '../components/Navbar'
 // import ClientStoriesCarousel from '../components/client-stories-carousel';
-import AboutUsSection from '../components/home/about-us-section'
+import AboutUsSection from '../components/AboutCogniscient'
 import SideDecoration from '../components/side-decoration'
 import WhatIsAIUX from '../components/WhatIsAIUX'
 import WhoAreAIUXFor from '../components/WhoAreAIUXFor'
 import StartYourJourney from '../components/StartYourJourney'
 import OurServices from '../components/OurServices'
 import WhoAreWe from '../components/WhoAreWe'
+import ContactForm from '../components/ContactForm'
 
 const MacBookPro162: NextPage = () => {
   const onRectangleClick = useCallback(() => {
@@ -31,7 +32,9 @@ const MacBookPro162: NextPage = () => {
         <ClientStoriesCarousel />
       </Box> */}
 
-      <SideDecoration />
+      <div className="z-1">
+        <SideDecoration />
+      </div>
       <Image
         className="absolute top-[0rem] left-[5.611rem] w-[10.556rem] h-[10.556rem] object-cover"
         width={190}
@@ -40,10 +43,10 @@ const MacBookPro162: NextPage = () => {
         alt=""
         src="/cogniscient.png"
       />
-      <div className="mt-30 w-4/5 mx-auto z-20">
+      <div className="mt-30 z-20">
         <AboutUsSection />
       </div>
-      <div className="mt-10 ">
+      <div className="mt-10 ml-30 z-20">
         <WhatIsAIUX />
       </div>
       <div className="mt-10 ">
@@ -56,11 +59,9 @@ const MacBookPro162: NextPage = () => {
         <OurServices />
       </div>
       <WhoAreWe />
-      <Box
-        className="absolute top-[230.656rem] left-[16.794rem] bg-[#51a0ef] w-[59.333rem] h-[20.478rem] cursor-pointer"
-        onClick={onRectangleClick}
-      />
-      <Box className="absolute top-[292.5rem] left-[20.411rem] bg-[#dcebff] w-[22.283rem] h-[3.144rem]" />
+      <ContactForm />
+
+      {/* <Box className="bg-[#dcebff]" />
       <div className="absolute top-[293.444rem] left-[21.339rem] text-[#5d85b9] inline-block w-[6.044rem] h-[1.261rem]">
         Name
       </div>
@@ -80,7 +81,7 @@ const MacBookPro162: NextPage = () => {
       </div>
       <div className="absolute top-[285.933rem] left-[20.411rem] text-[3.556rem] font-semibold">
         Contact Us
-      </div>
+      </div> */}
     </Box>
   )
 }
