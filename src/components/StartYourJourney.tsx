@@ -1,20 +1,9 @@
 import { Typography } from '@mui/material'
 
-interface StartYourJourneyProps {
-  top?: string
-  left?: string
-}
-
-const StartYourJourney: React.FC<StartYourJourneyProps> = ({
-  top = '96.556rem',
-  left = '41.506rem',
-}) => {
+const StartYourJourney = () => {
   return (
-    <div
-      className="absolute leading-[2.222rem] font-semibold inline-block w-[39.439rem] h-[22.267rem]"
-      style={{ top, left }}
-    >
-      <div className="absolute top-[163.572rem] left-[calc(50%_-_138.5px)] text-[2rem] font-semibold inline-block w-[50.444rem] h-[4.556rem]">
+    <div className="font-semibold inline-block ">
+      <div className="text-[2rem] font-semibold inline-block w-[50.444rem] h-[4.556rem]">
         Start Your Journey Today
       </div>
 

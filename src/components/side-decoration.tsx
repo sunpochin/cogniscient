@@ -1,9 +1,9 @@
-'use client';
+'use client'
 
-import Image from 'next/image';
-import type { FC } from 'react';
+import Image from 'next/image'
+import type { FC } from 'react'
 
-const imageTops = ['0rem', '77.389rem', '154.778rem', '232.167rem'];
+const imageTops = ['0rem', '77.389rem', '154.778rem', '232.167rem']
 
 /**
  * 頁面右側的滾動裝飾圖案。
@@ -12,10 +12,10 @@ const imageTops = ['0rem', '77.389rem', '154.778rem', '232.167rem'];
 const SideDecoration: FC = () => {
   return (
     <>
-      {imageTops.map((top) => (
+      {imageTops.map(top => (
         <Image
           key={top}
-          className={`fixed top-[${top}] right-0 w-[34.333rem] h-[77.389rem] overflow-hidden z-10`}
+          className={`fixed top-[${top}] right-0 w-[34.333rem] h-[77.389rem] overflow-hidden z-0`}
           width={618}
           height={1393}
           sizes="100vw"
@@ -24,7 +24,7 @@ const SideDecoration: FC = () => {
         />
       ))}
     </>
-  );
-};
+  )
+}
 
-export default SideDecoration;
+export default SideDecoration

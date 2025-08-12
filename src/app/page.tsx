@@ -11,9 +11,11 @@ import NavBar from '../components/Navbar'
 // import ClientStoriesCarousel from '../components/client-stories-carousel';
 import AboutUsSection from '../components/home/about-us-section'
 import SideDecoration from '../components/side-decoration'
-import WhatIsFor from '../components/WhatIsFor'
-import WhoAreFor from '../components/WhoAreFor'
+import WhatIsAIUX from '../components/WhatIsAIUX'
+import WhoAreAIUXFor from '../components/WhoAreAIUXFor'
 import StartYourJourney from '../components/StartYourJourney'
+import OurServices from '../components/OurServices'
+import WhoAreWe from '../components/WhoAreWe'
 
 const MacBookPro162: NextPage = () => {
   const onRectangleClick = useCallback(() => {
@@ -38,39 +40,26 @@ const MacBookPro162: NextPage = () => {
         alt=""
         src="/cogniscient.png"
       />
-      <div className="mt-30 w-4/5 mx-auto">
+      <div className="mt-30 w-4/5 mx-auto z-20">
         <AboutUsSection />
       </div>
-      <WhatIsFor />
-      <WhoAreFor />
-      <StartYourJourney />
-      <div className="absolute top-[198.444rem] left-[calc(50%_-_567.5px)] text-[2rem] font-semibold inline-block w-[50.444rem] h-[4.556rem]">
-        Our Services
+      <div className="mt-10 ">
+        <WhatIsAIUX />
       </div>
-      <div className="absolute top-[203rem] left-[16.472rem] font-semibold inline-block w-[60.667rem] h-[10.278rem]">
-        Our unique methodology begins with detailed one-on-one user studies
-        (sometimes called &quot;protocol analysis&quot;) and brings in
-        statistical and computational modeling. We are recognized leaders in the
-        application of computational modeling to UX analysis. We cover the full
-        product lifecycle—strategic opportunity mapping, evidence‑based UX
-        research, rapid prototyping of intelligent interactions, and rigorous
-        human‑in‑the‑loop evaluation.
+      <div className="mt-10 ">
+        <WhoAreAIUXFor />
       </div>
-      <div className="absolute top-[256.506rem] left-[16.794rem] font-semibold inline-block w-[59.372rem] h-[10.278rem]">
-        Each of our analysts holds a PhD in cognitive science, computer science,
-        mechanical engineering, or a related field. Some have served as senior
-        faculty at leading research universities, some have personally launched
-        multiple AI‑based startups, and all have experience consulting with
-        organizations ranging from single person startups to large-scale
-        government organzations. Our blend of academic rigor, entrepreneurial
-        experience, and hard core engineering expertise informs every
-        engagement.
+      <div className="mt-10 ">
+        <StartYourJourney />
       </div>
+      <div className="mt-10 ">
+        <OurServices />
+      </div>
+      <WhoAreWe />
       <Box
         className="absolute top-[230.656rem] left-[16.794rem] bg-[#51a0ef] w-[59.333rem] h-[20.478rem] cursor-pointer"
         onClick={onRectangleClick}
       />
-      <div className="absolute top-[223.678rem] left-[calc(50%_-_573px)] text-[2rem] font-semibold inline-block w-[50.444rem] h-[4.556rem]">{`Who Are Cogniscient `}</div>
       <Box className="absolute top-[292.5rem] left-[20.411rem] bg-[#dcebff] w-[22.283rem] h-[3.144rem]" />
       <div className="absolute top-[293.444rem] left-[21.339rem] text-[#5d85b9] inline-block w-[6.044rem] h-[1.261rem]">
         Name

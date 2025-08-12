@@ -6,10 +6,10 @@ import type { FC } from 'react'
 /**
  * Reference client section component displaying information about seeking reference clients.
  */
-const WhatIsFor: FC = ({}) => {
+const WhatIsAIUX: FC = ({}) => {
   return (
     <section>
-      <div className={`ml-20 mt-20 text-[2rem] font-semibold inline-block `}>
+      <div className={`text-[2rem] font-semibold`}>
         What’s Cognition-Centered AI UX?
       </div>
       <div className={`ml-40`}>
@@ -29,4 +29,4 @@ const WhatIsFor: FC = ({}) => {
   )
 }
 
-export default WhatIsFor
+export default WhatIsAIUX
