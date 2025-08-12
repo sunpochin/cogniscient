@@ -10,11 +10,11 @@ export type NavBarType = {
 }
 
 const navLinks = [
-  { label: 'About Us', href: '#about-us' },
-  { label: 'Services', href: '#services' },
+  { label: 'About Us', href: '/#about-us' },
+  { label: 'Services', href: '/#services' },
   { label: 'Members', href: '/members' },
   { label: 'Articles', href: '/articles' },
-  { label: 'Contact Us', href: '#contact-us' },
+  { label: 'Contact Us', href: '/#contact-us' },
 ]
 
 /**
@@ -45,7 +45,7 @@ const NavBar: FC<NavBarType> = ({ className = '' }) => {
       </div> */}
 
       {/* Desktop Menu (md and up) */}
-      <nav className="hidden md:flex items-center space-x-8 text-lg">
+      <nav className="hidden md:flex items-center space-x-8 text-lg text-black">
         {navLinks.map(link => (
           <Link href={link.href} key={link.label}>
             <div className="font-semibold cursor-pointer hover:text-blue-600 transition-colors">
