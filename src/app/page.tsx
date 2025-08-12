@@ -17,8 +17,9 @@ import StartYourJourney from '../components/StartYourJourney'
 import OurServices from '../components/OurServices'
 import WhoAreWe from '../components/WhoAreWe'
 import ContactForm from '../components/ContactForm'
+import WelcomeOverlay from '../components/WelcomeOverlay'
 
-const MacBookPro162: NextPage = () => {
+const HomePage: NextPage = () => {
   const onRectangleClick = useCallback(() => {
     // Please sync "MacBook Pro 16" - 3" to the project
   }, [])
@@ -27,6 +28,7 @@ const MacBookPro162: NextPage = () => {
 
   return (
     <Box className="w-full relative text-left text-[1.111rem] text-[#000] font-[Montserrat]">
+      <WelcomeOverlay />
       <div className="">
         <NavBar />
       </div>
@@ -45,22 +47,24 @@ const MacBookPro162: NextPage = () => {
         alt=""
         src="/cogniscient.png"
       />
-      <div className="mt-30 relative z-10">
+      <div className="mt-20 ml-3 mr-13 relative z-10">
         <AboutUsSection />
       </div>
-      <div className="mt-10 ml-30 relative z-10">
+      <div className="mt-20 w-3/4 ml-auto mr-12 relative z-10">
         <WhatIsAIUX />
       </div>
-      <div className="mt-30 w-4/4 relative z-10">
+      <div className="mt-20 ml-3 mr-13 relative z-10">
         <WhoAreAIUXFor />
       </div>
-      <div className="mt-30 w-4/4 relative z-10">
+      <div className="mt-20 w-3/4 ml-auto mr-12 relative z-10">
         <StartYourJourney />
       </div>
-      <div className="mt-30 w-4/4 relative z-10">
+      <div className="mt-20 ml-3 mr-13 relative z-10">
         <OurServices />
       </div>
-      <WhoAreWe />
+      <div className="mt-20 w-3/4 ml-auto mr-12 relative z-10">
+        <WhoAreWe />
+      </div>
       <ContactForm />
 
       {/* <Box className="bg-[#dcebff]" />
@@ -88,4 +92,4 @@ const MacBookPro162: NextPage = () => {
   )
 }
 
-export default MacBookPro162
+export default HomePage
