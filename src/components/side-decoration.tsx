@@ -3,7 +3,8 @@
 import Image from 'next/image'
 import type { FC } from 'react'
 
-const imageTops = ['0rem', '77.389rem', '154.778rem', '232.167rem']
+// const imageTops = ['0rem', '77.389rem', '154.778rem', '232.167rem']
+const imageTops = ['0rem', '77rem', '154rem', '231rem', '308rem']
 
 /**
  * 頁面右側的滾動裝飾圖案。

@@ -19,11 +19,10 @@ import ContactForm from '../components/ContactForm'
 import WelcomeOverlay from '../components/WelcomeOverlay'
 
 const HomePage: NextPage = () => {
-
   // <Box className="w-full relative h-[338.889rem] text-left text-[1.111rem] text-[#000] font-[Montserrat]">
 
   return (
-    <Box className="w-full relative text-left text-[1.111rem] text-[#000] font-[Montserrat]">
+    <Box className="w-full relative text-left text-[1.111rem] text-[#000] font-[Montserrat] bg-white">
       <WelcomeOverlay />
       <div className="">
         <NavBar />
@@ -43,25 +42,27 @@ const HomePage: NextPage = () => {
         alt=""
         src="/cogniscient.png"
       />
-      <div className="mt-40 ml-20 mr-14 relative z-10">
+      <div id="about-us" className="mt-40 ml-20 mr-14 relative z-10">
         <AboutCogniscient />
       </div>
-      <div className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
+      <div id="services" className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
         <WhatIsAIUX />
       </div>
-      <div className="mt-20 ml-20 mr-14 relative z-10">
+      <div id="members" className="mt-20 ml-20 mr-14 relative z-10">
         <WhoAreAIUXFor />
       </div>
-      <div className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
+      <div id="articles" className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
         <StartYourJourney />
       </div>
-      <div className="mt-20 ml-20 mr-14 relative z-10">
+      <div id="services" className="mt-20 ml-20 mr-14 relative z-10">
         <OurServices />
       </div>
       <div className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
         <WhoAreWe />
       </div>
-      <ContactForm />
+      <div id="contact-us">
+        <ContactForm />
+      </div>
     </Box>
   )
 }
