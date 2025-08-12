@@ -35,14 +35,14 @@ const NavBar: FC<NavBarType> = ({ className = '' }) => {
   return (
     <Box
       component="header"
-      className={`w-full flex justify-end items-center px-4 sm:px-8 py-4 bg-white relative ${className}`}
+      className={`w-full flex justify-between items-center px-4 sm:px-8 py-4 bg-white relative ${className}`}
     >
       {/* Logo */}
-      <div className="text-xl font-bold">
+      {/* <div className="text-xl font-bold">
         <Link href="/" onClick={closeMenu}>
           Cogniscient
         </Link>
-      </div>
+      </div> */}
 
       {/* Desktop Menu (md and up) */}
       <nav className="hidden md:flex items-center space-x-8 text-lg">

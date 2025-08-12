@@ -3,13 +3,9 @@ import { Typography } from '@mui/material'
 function AboutUsSection() {
   return (
     <section>
-      <Typography
-        variant="h1"
-        className="font-semibold"
-        sx={{ fontSize: '2.222rem', lineHeight: '2.222rem', mb: 2 }}
-      >
-        <div className="text-[2rem] font-semibold ml-1">Cogniscient</div>
-        <div className="font-semibold ml-10">
+      <Typography>
+        <div className="text-[2rem] font-semibold">Cogniscient</div>
+        <div className="font-semibold ml-0">
           <Typography component="span" sx={{ fontSize: '1.111rem' }}>
             is a consultancy working at the intersection of artificial
             intelligence and human-centered design. We apply deep expertise in

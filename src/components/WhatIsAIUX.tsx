@@ -12,7 +12,7 @@ const WhatIsAIUX: FC = ({}) => {
       <div className={`text-[2rem] font-semibold`}>
         What’s Cognition-Centered AI UX?
       </div>
-      <div className={`ml-40`}>
+      <div className={`ml-4`}>
         <Typography variant="inherit">
           We are currently seeking reference clients to help refine our
           offerings. You will receive comprehensive consulting services,
