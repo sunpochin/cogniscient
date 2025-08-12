@@ -18,7 +18,6 @@ const ContactForm = () => {
   const onSubmit = (data: ContactFormData) => {
     console.warn(data)
     // 處理表單提交
-    console.log('Message sent! We will get back to you soon.')
     reset()
   }
 
@@ -65,6 +64,9 @@ const ContactForm = () => {
         </div>
         <div className="text-[1.333rem] font-semibold mb-6">
           We look forward to hear from you!
+          <div className="inline-block text-[0.667rem] text-[#5d85b9] mt-4 ml-50">
+            You will receive a copy of the message after you submit
+          </div>
         </div>
         {errors.message && (
           <p className="text-red-500 text-sm">{errors.message.message}</p>
@@ -76,10 +78,6 @@ const ContactForm = () => {
         >
           Send Message
         </button>
-
-        <p className="text-[0.667rem] text-[#5d85b9] mt-4">
-          You will receive a copy of the message after you submit
-        </p>
       </form>
     </div>
   )
