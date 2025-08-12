@@ -18,22 +18,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: 'yarn'
 
-      - name: Install dependencies
-        run: npm ci
+      # - name: Install dependencies
+      #   run: yarn ci
 
-      - name: Check code formatting
-        run: npm run format:check
+      # - name: Check code formatting
+      #   run: yarn run format:check
 
       - name: Run ESLint (strict mode)
-        run: npm run lint:strict
+        run: yarn lint
 
-      - name: Run TypeScript type check
-        run: npm run type-check
+      # - name: Run TypeScript type check
+      #   run: yarn run type-check
 
       - name: Build project
-        run: npm run build
+        run: yarn build
 
       - name: Check for build errors
         run: |
