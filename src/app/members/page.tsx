@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import NavBar from '../../components/Navbar'; // Import NavBar component
+import Link from 'next/link'; // Added Link import
 
 const members = [
   {
@@ -9,21 +10,24 @@ const members = [
     name: 'John Doe',
     title: 'CEO',
     description: 'John is the visionary leader behind our company, driving innovation and growth.',
-    image: '/cogniscient.png', // Placeholder image
+    image: 'https://api.dicebear.com/7.x/initials/svg?seed=JohnDoe',
+    link: '/members/1', // Added link
   },
   {
     id: 2,
     name: 'Jane Smith',
     title: 'CTO',
     description: 'Jane leads our technology development, ensuring cutting-edge solutions.',
-    image: '/cogniscient.png', // Placeholder image
+    image: 'https://api.dicebear.com/7.x/initials/svg?seed=JaneSmith',
+    link: '/members/2', // Added link
   },
   {
     id: 3,
     name: 'Peter Jones',
     title: 'Lead Designer',
     description: 'Peter crafts intuitive and beautiful user experiences.',
-    image: '/cogniscient.png', // Placeholder image
+    image: 'https://api.dicebear.com/7.x/initials/svg?seed=PeterJones',
+    link: '/members/3', // Added link
   },
 ];
 
@@ -45,7 +49,10 @@ export default function MembersPage() {
               />
               <h2 className="text-2xl font-semibold mb-2">{member.name}</h2>
               <h3 className="text-lg text-gray-600 mb-4">{member.title}</h3>
-              <p className="text-gray-700">{member.description}</p>
+              <p className="text-gray-700 mb-4">{member.description}</p> {/* Added mb-4 for spacing */}
+              <Link href={member.link} className="text-blue-600 hover:underline"> {/* Added Read More link */}
+                Read More
+              </Link>
             </div>
           ))}
         </div>
@@ -53,4 +60,5 @@ export default function MembersPage() {
     </div>
   );
 }
+
 

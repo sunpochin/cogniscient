@@ -8,26 +8,26 @@ const articles = [
   {
     id: 1,
     title: 'Understanding AI in UX',
-    image: '/cogniscient.png', // Placeholder image
-    link: '/articles/article-1',
+    image: 'https://picsum.photos/seed/1/250/150', // Random image for article 1
+    link: '/articles/1',
   },
   {
     id: 2,
     title: 'The Future of Human-AI Interaction',
-    image: '/cogniscient.png', // Placeholder image
-    link: '/articles/article-2',
+    image: 'https://picsum.photos/seed/2/250/150', // Random image for article 2
+    link: '/articles/2',
   },
   {
     id: 3,
     title: 'Designing Trustworthy AI Systems',
-    image: '/cogniscient.png', // Placeholder image
-    link: '/articles/article-3',
+    image: 'https://picsum.photos/seed/3/250/150', // Random image for article 3
+    link: '/articles/3',
   },
   {
     id: 4,
     title: 'Cognitive Science in Product Design',
-    image: '/cogniscient.png', // Placeholder image
-    link: '/articles/article-4',
+    image: 'https://picsum.photos/seed/4/250/150', // Random image for article 4
+    link: '/articles/4',
   },
 ];
 
