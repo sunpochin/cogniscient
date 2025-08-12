@@ -30,13 +30,13 @@ const MembersPage = () => {
   return (
     <div>
       <NavBar />
-      <div className="min-h-screen bg-gray-50 py-12 px-4">
+      <div className="min-h-screen bg-gray-50 py-8 md:py-12 px-4">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 md:mb-12">
             Our Team Members
           </h1>
           
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {members.map((member) => (
               <div 
                 key={member.id} 
@@ -52,8 +52,8 @@ const MembersPage = () => {
                   />
                 </div>
                 
-                <div className="p-6">
-                  <h2 className="text-xl font-semibold text-gray-800 mb-1">
+                <div className="p-4 md:p-6">
+                  <h2 className="text-lg md:text-xl font-semibold text-gray-800 mb-1">
                     {member.name}
                   </h2>
                   
