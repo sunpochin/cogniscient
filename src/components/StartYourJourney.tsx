@@ -5,7 +5,7 @@ const StartYourJourney = () => {
     <div className="">
       <div className="text-[2rem] font-semibold ">Start Your Journey Today</div>
 
-      <Typography className="!m-0" variant="inherit">
+      <Typography>
         We are currently seeking reference clients to help refine our offerings.
         You will receive comprehensive consulting services, including research,
         design, and technical integration—at no cost(*). All we ask for is

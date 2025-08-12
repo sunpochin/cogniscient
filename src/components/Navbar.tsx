@@ -11,10 +11,10 @@ export type NavBarType = {
 
 const navLinks = [
   { label: 'About Us', href: '/about' },
-  { label: 'Services', href: '/services' },
+  { label: 'Services', href: '/#services' },
   { label: 'Members', href: '/members' },
   { label: 'Articles', href: '/articles' },
-  { label: 'Contact Us', href: '/contact' },
+  { label: 'Contact Us', href: '/#contact' },
 ]
 
 /**
@@ -35,20 +35,20 @@ const NavBar: FC<NavBarType> = ({ className = '' }) => {
   return (
     <Box
       component="header"
-      className={`w-full flex justify-end items-center px-4 sm:px-8 py-4 bg-white relative ${className}`}
+      className={`w-full flex justify-between items-center px-4 sm:px-8 py-4 bg-white relative ${className}`}
     >
       {/* Logo */}
-      <div className="text-xl font-bold">
+      {/* <div className="text-xl font-bold">
         <Link href="/" onClick={closeMenu}>
           Cogniscient
         </Link>
-      </div>
+      </div> */}
 
       {/* Desktop Menu (md and up) */}
       <nav className="hidden md:flex items-center space-x-8 text-lg">
         {navLinks.map(link => (
           <Link href={link.href} key={link.label}>
-            <div className="font-semibold cursor-pointer hover:text-blue-600 transition-colors">
+            <div className="font-semibold cursor-pointer text-black hover:text-blue-600 transition-colors">
               {link.label}
             </div>
           </Link>
@@ -86,7 +86,7 @@ const NavBar: FC<NavBarType> = ({ className = '' }) => {
             {navLinks.map(link => (
               <Link href={link.href} key={link.label}>
                 <div
-                  className="font-semibold cursor-pointer hover:text-blue-600 transition-colors"
+                  className="font-semibold cursor-pointer text-black hover:text-blue-600 transition-colors"
                   onClick={closeMenu} // Close menu on click
                 >
                   {link.label}
