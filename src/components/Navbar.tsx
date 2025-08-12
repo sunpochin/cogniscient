@@ -10,7 +10,7 @@ export type NavBarType = {
 }
 
 const navLinks = [
-  { label: 'About Us', href: '/about' },
+  { label: 'About Us', href: '/' },
   { label: 'Services', href: '/#services' },
   { label: 'Members', href: '/members' },
   { label: 'Articles', href: '/articles' },

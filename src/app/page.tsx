@@ -46,7 +46,7 @@ const HomePage: NextPage = () => {
       <div className="mt-40 ml-20 mr-14 relative z-10">
         <AboutCogniscient />
       </div>
-      <div className="ml-80">
+      <div className="flex justify-center">
         <GameOfLifeLogo size={200} />
       </div>
       <div className="mt-20 w-3/4 ml-auto mr-14 relative z-10">

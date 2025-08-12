@@ -354,19 +354,43 @@ const GameOfLifeLogo: React.FC<GameOfLifeLogoProps> = ({
   }, [])
 
   return (
-    <div className={`game-of-life-logo ${className}`}>
-      <style jsx>{`
-        .game-of-life-logo {
-          background: white;
-          border-radius: ${compact ? '12px' : '20px'};
-          padding: ${compact ? '20px' : '40px'};
-          box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-          display: inline-flex;
-          align-items: center;
-          gap: ${compact ? '15px' : '30px'};
-          transition: transform 0.3s ease;
-          max-width: fit-content;
-        }
+    <div className={`game-of-life-logo-wrapper ${className}`}>
+      <div className="game-of-life-logo">
+        <style jsx>{`
+          .game-of-life-logo-wrapper {
+            display: block;
+            width: 100%;
+            text-align: center;
+            /* 確保能配合 mx-auto */
+            margin: 0 auto;
+          }
+          
+          .game-of-life-logo {
+            background: white;
+            border-radius: ${compact ? '12px' : '20px'};
+            padding: ${compact ? '20px' : '40px'};
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: ${compact ? '15px' : '30px'};
+            transition: transform 0.3s ease;
+            max-width: fit-content;
+            margin: 0 auto;
+            
+            /* 手機版響應式調整 */
+            @media (max-width: 768px) {
+              flex-direction: ${showText ? 'column' : 'row'};
+              padding: ${compact ? '15px' : '25px'};
+              gap: ${compact ? '10px' : '20px'};
+              text-align: center;
+            }
+            
+            /* 超小螢幕進一步調整 */
+            @media (max-width: 480px) {
+              padding: ${compact ? '12px' : '20px'};
+              gap: ${compact ? '8px' : '15px'};
+            }
+          }
 
         .game-of-life-logo:hover {
           transform: translateY(-5px);
@@ -380,6 +404,17 @@ const GameOfLifeLogo: React.FC<GameOfLifeLogoProps> = ({
           grid-template-rows: repeat(17, 1fr);
           gap: 1px;
           flex-shrink: 0;
+          
+          /* 手機版網格調整 */
+          @media (max-width: 768px) {
+            width: ${Math.min(size, 100)}px;
+            height: ${Math.min(size, 100)}px;
+          }
+          
+          @media (max-width: 480px) {
+            width: ${Math.min(size, 80)}px;
+            height: ${Math.min(size, 80)}px;
+          }
         }
 
         .game-grid :global(.gol-cell) {
@@ -421,6 +456,15 @@ const GameOfLifeLogo: React.FC<GameOfLifeLogoProps> = ({
           -webkit-text-fill-color: transparent;
           letter-spacing: -0.02em;
           margin: 0;
+          
+          /* 手機版文字調整 */
+          @media (max-width: 768px) {
+            font-size: ${compact ? '20px' : '28px'};
+          }
+          
+          @media (max-width: 480px) {
+            font-size: ${compact ? '18px' : '24px'};
+          }
         }
 
         .tagline {
@@ -429,6 +473,16 @@ const GameOfLifeLogo: React.FC<GameOfLifeLogoProps> = ({
           margin: 0;
           margin-top: 5px;
           font-weight: 500;
+          
+          /* 手機版標語調整 */
+          @media (max-width: 768px) {
+            font-size: ${compact ? '11px' : '13px'};
+            margin-top: 3px;
+          }
+          
+          @media (max-width: 480px) {
+            font-size: ${compact ? '10px' : '12px'};
+          }
         }
 
         @keyframes fade-in {
@@ -452,16 +506,17 @@ const GameOfLifeLogo: React.FC<GameOfLifeLogoProps> = ({
             transform: scale(0.8);
           }
         }
-      `}</style>
-      
-      <div className="game-grid" ref={gridRef}></div>
-      
-      {showText && (
-        <div className="text-content">
-          <div className="logo-text">Cogniscient</div>
-          <div className="tagline">Cognitive AI • UX Consulting</div>
-        </div>
-      )}
+        `}</style>
+        
+        <div className="game-grid" ref={gridRef}></div>
+        
+        {showText && (
+          <div className="text-content">
+            <div className="logo-text">Cogniscient</div>
+            <div className="tagline">Cognitive AI • UX Consulting</div>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
