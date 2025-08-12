@@ -16,9 +16,9 @@ const ContactForm = () => {
   } = useForm<ContactFormData>()
 
   const onSubmit = (data: ContactFormData) => {
-    console.log(data)
+    console.warn(data)
     // 處理表單提交
-    alert('Message sent! We will get back to you soon.')
+    console.log('Message sent! We will get back to you soon.')
     reset()
   }
 

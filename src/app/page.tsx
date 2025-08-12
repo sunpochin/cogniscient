@@ -4,7 +4,6 @@
  */
 'use client'
 import type { NextPage } from 'next'
-import { useCallback } from 'react'
 import { Box } from '@mui/material'
 import Image from 'next/image'
 import NavBar from '../components/Navbar'
@@ -20,9 +19,6 @@ import ContactForm from '../components/ContactForm'
 import WelcomeOverlay from '../components/WelcomeOverlay'
 
 const HomePage: NextPage = () => {
-  const onRectangleClick = useCallback(() => {
-    // Please sync "MacBook Pro 16" - 3" to the project
-  }, [])
 
   // <Box className="w-full relative h-[338.889rem] text-left text-[1.111rem] text-[#000] font-[Montserrat]">
 
