@@ -37,12 +37,7 @@ body {
 
 .nav-item {
   color: #000;
-  font-family:
-    Montserrat,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: normal;
@@ -91,15 +86,9 @@ body {
 }
 
 .main-title {
-  width: 908px;
   height: 82px;
   color: #000;
-  font-family:
-    Montserrat,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: normal;
@@ -132,12 +121,7 @@ body {
   height: 88px;
   color: #fff;
   text-align: center;
-  font-family:
-    Montserrat,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: normal;

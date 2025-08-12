@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(sed:*)",
+<<<<<<< HEAD
+      "Bash(grep:*)"
+=======
+      "Bash(npm install:*)"
+>>>>>>> 7e0b5b3dc40bfe324940ddc994b648bab4d96f17
+    ]
+  },
+  "enableAllProjectMcpServers": false
+}
