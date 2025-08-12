@@ -9,7 +9,7 @@ import { Box } from '@mui/material'
 import Image from 'next/image'
 import NavBar from '../components/Navbar'
 // import ClientStoriesCarousel from '../components/client-stories-carousel';
-import AboutCogniscient from '../components/AboutCogniscient'
+import AboutUsSection from '../components/AboutCogniscient'
 import SideDecoration from '../components/side-decoration'
 import WhatIsAIUX from '../components/WhatIsAIUX'
 import WhoAreAIUXFor from '../components/WhoAreAIUXFor'
@@ -33,7 +33,8 @@ const MacBookPro162: NextPage = () => {
       {/* <Box className="mt-80">
         <ClientStoriesCarousel />
       </Box> */}
-      <div className="">
+
+      <div className="z-1">
         <SideDecoration />
       </div>
       <Image
@@ -44,25 +45,45 @@ const MacBookPro162: NextPage = () => {
         alt=""
         src="/cogniscient.png"
       />
-      <div className="mt-30 w-4/4 relative z-10">
-        <AboutCogniscient />
-        {/* 讓組件本身處理背景
-         */}
-      </div>{' '}
-      <div className="mt-30 w-4/4 relative z-10">
+      <div className="mt-30 relative z-10">
+        <AboutUsSection />
+      </div>
+      <div className="mt-10 ml-30 relative z-10">
         <WhatIsAIUX />
       </div>
       <div className="mt-30 w-4/4 relative z-10">
         <WhoAreAIUXFor />
       </div>
-      {/* <div className="mt-30 w-4/4 relative z-10">
+      <div className="mt-30 w-4/4 relative z-10">
         <StartYourJourney />
-      </div> */}
+      </div>
       <div className="mt-30 w-4/4 relative z-10">
         <OurServices />
       </div>
       <WhoAreWe />
       <ContactForm />
+
+      {/* <Box className="bg-[#dcebff]" />
+      <div className="absolute top-[293.444rem] left-[21.339rem] text-[#5d85b9] inline-block w-[6.044rem] h-[1.261rem]">
+        Name
+      </div>
+      <Box className="absolute top-[297.006rem] left-[20.411rem] bg-[#dcebff] w-[49.45rem] h-[3.144rem]" />
+      <Box className="absolute top-[301.517rem] left-[20.411rem] bg-[#dcebff] w-[49.45rem] h-[20.083rem]" />
+      <div className="absolute top-[297.95rem] left-[21.339rem] text-[#5d85b9] inline-block w-[6.044rem] h-[1.339rem]">
+        Email
+      </div>
+      <div className="absolute top-[302.461rem] left-[21.339rem] text-[#5d85b9] inline-block w-[10.344rem] h-[1.261rem]">
+        The message
+      </div>
+      <div className="absolute top-[322.306rem] left-[51.467rem] text-[0.667rem] text-[#5d85b9] inline-block w-[21.039rem] h-[0.789rem]">
+        You will receive a copy of the message after you submit
+      </div>
+      <div className="absolute top-[309.95rem] left-[33.25rem] text-[1.333rem] font-semibold">
+        We look forward to hear from you!
+      </div>
+      <div className="absolute top-[285.933rem] left-[20.411rem] text-[3.556rem] font-semibold">
+        Contact Us
+      </div> */}
     </Box>
   )
 }
