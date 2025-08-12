@@ -5,8 +5,8 @@ interface ArticleDetailProps {
 }
 
 const ArticleDetail: React.FC<ArticleDetailProps> = ({ articleId }) => {
-  const articleData = {
-    1: {
+  const articleData: Record<string, { title: string; content: string }> = {
+    '1': {
       title: "Modern Technology Trends",
       content: `Technology continues to evolve at an unprecedented pace, reshaping industries and transforming how we live and work. Artificial intelligence and machine learning have moved from science fiction to everyday reality, powering everything from recommendation algorithms to autonomous vehicles.
 
@@ -18,7 +18,7 @@ As we look toward the future, the convergence of these technologies will create 
 
 The digital transformation journey is far from over. Organizations that embrace these emerging technologies and adapt their strategies accordingly will be best positioned to thrive in an increasingly connected and automated world.`
     },
-    2: {
+    '2': {
       title: "Importance of Sustainability",
       content: `Sustainability has become more than just a buzzword—it's a critical imperative for our planet's future. Climate change, resource depletion, and environmental degradation pose unprecedented challenges that require immediate and sustained action from individuals, businesses, and governments alike.
 
@@ -30,7 +30,7 @@ Consumer awareness and demand for sustainable products continue to grow. This ma
 
 The path to sustainability requires collaboration across all sectors. By combining technological innovation with policy support and individual action, we can create a more sustainable future for generations to come.`
     },
-    3: {
+    '3': {
       title: "Digital Transformation",
       content: `Digital transformation has accelerated dramatically in recent years, fundamentally changing how businesses operate and compete. The COVID-19 pandemic served as a catalyst, forcing organizations to rapidly adopt digital technologies and rethink their traditional business models.
 
@@ -42,7 +42,7 @@ Data analytics and artificial intelligence are driving more informed decision-ma
 
 The digital transformation journey is ongoing and requires continuous adaptation. Companies that successfully navigate this transformation will build more resilient, agile, and customer-centric organizations prepared for the future of business.`
     },
-    4: {
+    '4': {
       title: "Healthy Living Tips",
       content: `Maintaining good health in today's fast-paced world requires intentional effort and smart choices. A holistic approach to wellness encompasses physical fitness, mental health, nutrition, and lifestyle habits that support overall well-being.
 
@@ -58,7 +58,7 @@ Small, consistent changes often lead to the most sustainable results. Focus on p
     }
   }
 
-  const article = articleData[articleId as keyof typeof articleData] || articleData[1]
+  const article = articleData[articleId] || articleData['1']
   const imageUrl = `https://picsum.photos/seed/tech${articleId}/800/400`
 
   return (
