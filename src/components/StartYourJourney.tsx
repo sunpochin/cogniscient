@@ -2,10 +2,8 @@ import { Typography } from '@mui/material'
 
 const StartYourJourney = () => {
   return (
-    <div className="font-semibold inline-block ">
-      <div className="text-[2rem] font-semibold inline-block w-[50.444rem] h-[4.556rem]">
-        Start Your Journey Today
-      </div>
+    <div className="">
+      <div className="text-[2rem] font-semibold ">Start Your Journey Today</div>
 
       <Typography className="!m-0" variant="inherit">
         We are currently seeking reference clients to help refine our offerings.
