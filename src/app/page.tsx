@@ -17,6 +17,7 @@ import OurServices from '../components/OurServices'
 import WhoAreWe from '../components/WhoAreWe'
 import ContactForm from '../components/ContactForm'
 import WelcomeOverlay from '../components/WelcomeOverlay'
+import GameOfLifeLogo from '../components/GameOfLifeLogo'
 
 const HomePage: NextPage = () => {
   // <Box className="w-full relative h-[338.889rem] text-left text-[1.111rem] text-[#000] font-[Montserrat]">
@@ -44,6 +45,9 @@ const HomePage: NextPage = () => {
       />
       <div className="mt-40 ml-20 mr-14 relative z-10">
         <AboutCogniscient />
+      </div>
+      <div className="ml-80">
+        <GameOfLifeLogo size={200} />
       </div>
       <div className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
         <WhatIsAIUX />
