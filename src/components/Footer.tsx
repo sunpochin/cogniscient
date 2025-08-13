@@ -114,7 +114,7 @@ const Footer = () => {
 
         {/* Copyright information separator */}
         <div className="border-t border-gray-700 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-4">
             <p className="text-gray-300 text-sm mb-2 md:mb-0">
               © {new Date().getFullYear()} Cogniscient. All rights reserved.
             </p>
@@ -134,6 +134,19 @@ const Footer = () => {
                 Terms of Service
               </Link>
             </div>
+          </div>
+          
+          {/* Personal Portfolio Signature */}
+          <div className="flex justify-end">
+            <p className="text-gray-400 text-xs">
+              Made with <span className="text-red-400">❤️</span> by{' '}
+              <a 
+                href="mailto:sunpochin@gmail.com"
+                className="text-blue-400 hover:text-blue-300 transition-colors duration-200"
+              >
+                sunpochin@gmail.com
+              </a>
+            </p>
           </div>
         </div>
       </div>
