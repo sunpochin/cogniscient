@@ -8,9 +8,14 @@ export async function generateStaticParams() {
   }));
 }
 
-// The page component is now synchronous and directly destructures `id` from `params`
-const ItemDetailPage = ({ params: { id } }: { params: { id: string } }) => {
-  const item = items.find((item) => item.id.toString() === id);
+interface ItemDetailPageProps {
+  params: Promise<{ id: string }>
+}
+
+const ItemDetailPage: React.FC<ItemDetailPageProps> = async ({ params }) => {
+  const resolvedParams = await params;
+  const id = resolvedParams.id;
+  const item = items.find((p) => p.id.toString() === id);
 
   if (!item) {
     return <div>Item not found</div>;
