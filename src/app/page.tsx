@@ -20,17 +20,15 @@ import WelcomeOverlay from '../components/WelcomeOverlay'
 import GameOfLifeLogo from '../components/GameOfLifeLogo'
 
 const HomePage: NextPage = () => {
-  // <Box className="w-full relative h-[338.889rem] text-left text-[1.111rem] text-[#000] font-[Montserrat]">
-
   return (
-    <Box className="w-full relative text-left text-[1.111rem] text-[#000] bg-white font-[Montserrat]">
+    <main className="w-full relative text-left text-[1.111rem] text-[#000] bg-gray-50">
       <WelcomeOverlay />
-      <div className="relative z-10">
+      <header className="relative z-10">
         <NavBar />
-      </div>
-      {/* <Box className="mt-80">
+      </header>
+      {/* <section className="mt-80">
         <ClientStoriesCarousel />
-      </Box> */}
+      </section> */}
 
       <div className="z-1">
         <SideDecoration />
@@ -40,34 +38,42 @@ const HomePage: NextPage = () => {
         width={190}
         height={190}
         sizes="100vw"
-        alt=""
+        alt="Cogniscient company logo"
         src="/cogniscient.png"
       />
-      <div className="mt-40 ml-20 mr-14 relative z-10">
+      
+      <section className="mt-40 flex justify-center">
+        <GameOfLifeLogo />
+      </section>
+      
+      <section className="mt-40 ml-20 mr-14 relative z-10">
         <AboutCogniscient />
-      </div>
-      <div className="flex justify-center">
-        <GameOfLifeLogo size={200} />
-      </div>
-      <div className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
+      </section>
+      
+      <section className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
         <WhatIsAIUX />
-      </div>
-      <div className="mt-20 ml-20 mr-14 relative z-10">
+      </section>
+      
+      <section className="mt-20 ml-20 mr-14 relative z-10">
         <WhoAreAIUXFor />
-      </div>
-      <div className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
+      </section>
+      
+      <section className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
         <StartYourJourney />
-      </div>
-      <div id="services" className="mt-20 ml-20 mr-14 relative z-10">
+      </section>
+      
+      <section id="services" className="mt-20 ml-20 mr-14 relative z-10">
         <OurServices />
-      </div>
-      <div className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
+      </section>
+      
+      <section className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
         <WhoAreWe />
-      </div>
-      <div id="contact">
+      </section>
+      
+      <section id="contact">
         <ContactForm />
-      </div>
-    </Box>
+      </section>
+    </main>
   )
 }
 

@@ -28,24 +28,26 @@ const MembersPage = () => {
   ]
 
   return (
-    <div>
+    <main className="bg-gray-50 min-h-screen">
       <NavBar />
-      <div className="min-h-screen bg-gray-50 py-8 md:py-12 px-4">
+      <section className="py-8 md:py-12 px-4">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 md:mb-12">
-            Our Team Members
-          </h1>
+          <header className="text-center mb-8 md:mb-12">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+              Our Team Members
+            </h1>
+          </header>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {members.map((member) => (
-              <div 
+              <article 
                 key={member.id} 
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="relative h-48 w-full">
                   <Image
                     src={member.imageUrl}
-                    alt={member.name}
+                    alt={`Portrait of ${member.name}`}
                     fill
                     className="object-cover"
                     sizes="33vw"
@@ -53,13 +55,15 @@ const MembersPage = () => {
                 </div>
                 
                 <div className="p-4 md:p-6">
-                  <h2 className="text-lg md:text-xl font-semibold text-gray-800 mb-1">
-                    {member.name}
-                  </h2>
-                  
-                  <h3 className="text-blue-600 font-medium text-sm mb-3">
-                    {member.role}
-                  </h3>
+                  <header className="mb-3">
+                    <h2 className="text-lg md:text-xl font-semibold text-gray-800 mb-1">
+                      {member.name}
+                    </h2>
+                    
+                    <h3 className="text-blue-600 font-medium text-sm">
+                      {member.role}
+                    </h3>
+                  </header>
                   
                   <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-4">
                     {member.description}
@@ -68,6 +72,7 @@ const MembersPage = () => {
                   <Link 
                     href={`/members/${member.id}`}
                     className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors duration-200"
+                    aria-label={`Read more about ${member.name}`}
                   >
                     Read More
                     <svg 
@@ -75,6 +80,7 @@ const MembersPage = () => {
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path 
                         strokeLinecap="round" 
@@ -85,12 +91,12 @@ const MembersPage = () => {
                     </svg>
                   </Link>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   )
 }
 

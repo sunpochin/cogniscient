@@ -31,24 +31,26 @@ const ArticlesPage = () => {
   ]
 
   return (
-    <div>
+    <main className="bg-gray-50 min-h-screen">
       <NavBar />
-      <div className="min-h-screen bg-gray-50 py-8 md:py-12 px-4">
+      <section className="py-8 md:py-12 px-4">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 md:mb-12">
-            Featured Articles
-          </h1>
+          <header className="text-center mb-8 md:mb-12">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+              Featured Articles
+            </h1>
+          </header>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4">
             {articles.map((article) => (
-              <div 
+              <article 
                 key={article.id} 
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="relative h-36 w-full">
                   <Image
                     src={article.imageUrl}
-                    alt={article.title}
+                    alt={`Featured image for article: ${article.title}`}
                     fill
                     className="object-cover"
                     sizes="25vw"
@@ -56,9 +58,11 @@ const ArticlesPage = () => {
                 </div>
                 
                 <div className="p-4 md:p-4">
-                  <h2 className="text-base md:text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
-                    {article.title}
-                  </h2>
+                  <header className="mb-3">
+                    <h2 className="text-base md:text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
+                      {article.title}
+                    </h2>
+                  </header>
                   
                   <p className="text-gray-600 text-xs md:text-xs leading-relaxed mb-3 line-clamp-3">
                     {article.description}
@@ -67,6 +71,7 @@ const ArticlesPage = () => {
                   <Link 
                     href={`/articles/${article.id}`}
                     className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors duration-200"
+                    aria-label={`Read full article: ${article.title}`}
                   >
                     Read More
                     <svg 
@@ -74,6 +79,7 @@ const ArticlesPage = () => {
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path 
                         strokeLinecap="round" 
@@ -84,12 +90,12 @@ const ArticlesPage = () => {
                     </svg>
                   </Link>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   )
 }
 
