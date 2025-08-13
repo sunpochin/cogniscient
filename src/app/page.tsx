@@ -9,7 +9,7 @@ import Image from 'next/image'
 import NavBar from '../components/Navbar'
 // import ClientStoriesCarousel from '../components/client-stories-carousel';
 import AboutCogniscient from '../components/AboutCogniscient'
-import SideDecoration from '../components/side-decoration'
+import SideDecoration from '../components/SideDecoration'
 import WhatIsAIUX from '../components/WhatIsAIUX'
 import WhoAreAIUXFor from '../components/WhoAreAIUXFor'
 import StartYourJourney from '../components/StartYourJourney'
