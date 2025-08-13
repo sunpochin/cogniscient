@@ -4,7 +4,7 @@ import { items } from './data'
 
 const ItemsPage = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-8 md:py-12 px-4">
+    <div className="min-h-screen bg-white py-8 md:py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 md:mb-12">
           Featured Items

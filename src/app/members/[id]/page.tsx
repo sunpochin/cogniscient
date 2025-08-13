@@ -20,7 +20,7 @@ const MemberPage: React.FC<MemberPageProps> = async ({ params }) => {
 
   return (
     // 主要內容區域，統一使用 bg-gray-50 背景
-    <main className="bg-gray-50 min-h-screen">
+    <main className="bg-white min-h-screen">
       {/* 導覽列 */}
       <NavBar />
       

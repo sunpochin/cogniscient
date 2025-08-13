@@ -42,7 +42,7 @@ const ArticlesPage = () => {
   // 渲染頁面結構
   return (
     // 主要內容區域，使用語義化的 main 標籤
-    <main className="bg-gray-50 min-h-screen">
+    <main className="bg-white min-h-screen">
       {/* 導覽列 */}
       <NavBar />
       

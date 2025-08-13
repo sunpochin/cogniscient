@@ -56,7 +56,7 @@ const HomePage: NextPage = () => {
       - text-[#000]: 黑色文字
       - bg-gray-50: 淺灰色背景，統一全站風格
     */
-    <main className="w-full relative text-left text-[1.111rem] text-[#000] bg-gray-50">
+    <main className="w-full relative text-left text-[1.111rem] text-[#000] bg-white">
       {/* 歡迎頁面覆蓋層 - 可能包含載入動畫或歡迎訊息 */}
       <WelcomeOverlay />
       
