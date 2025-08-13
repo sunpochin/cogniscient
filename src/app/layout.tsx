@@ -32,7 +32,7 @@ export default function RootLayout({
             <CssBaseline />
             <div className="min-h-screen">
               <NavBar />
-              <div>{children}</div>
+              <main>{children}</main>
               <Footer />
             </div>
           </ThemeProvider>

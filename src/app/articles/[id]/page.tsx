@@ -18,8 +18,8 @@ const ArticlePage: React.FC<ArticlePageProps> = async ({ params }) => {
   const articleId = resolvedParams.id
 
   return (
-    // 主要內容區域
-    <main className="bg-white">
+    // 文章詳細頁面內容區域
+    <div className="bg-white">
       {/* 文章詳細內容 */}
       <section className="py-8">
         <ArticleDetail articleId={articleId} />
@@ -52,7 +52,7 @@ const ArticlePage: React.FC<ArticlePageProps> = async ({ params }) => {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }
 

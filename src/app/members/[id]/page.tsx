@@ -18,8 +18,8 @@ const MemberPage: React.FC<MemberPageProps> = async ({ params }) => {
   const memberId = resolvedParams.id
 
   return (
-    // 主要內容區域
-    <main className="bg-white">
+    // 成員詳細頁面內容區域
+    <div className="bg-white">
       {/* 成員詳細內容 */}
       <section className="py-8">
         <MemberDetail memberId={memberId} />
@@ -52,7 +52,7 @@ const MemberPage: React.FC<MemberPageProps> = async ({ params }) => {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }
 

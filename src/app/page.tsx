@@ -46,16 +46,11 @@ import ContactForm from '../components/ContactForm' // 聯絡表單區塊
 const HomePage: NextPage = () => {
   return (
     /*
-      主要內容容器
-      - main: 語義化標籤，標示頁面主要內容
-      - w-full: 佔滿整個寬度
-      - relative: 相對定位，為絕對定位的子元素提供參考點
-      - text-left: 文字左對齊
-      - text-[1.111rem]: 自定義字體大小
-      - text-[#000]: 黑色文字
-      - bg-gray-50: 淺灰色背景，統一全站風格
+      首頁內容區域
+      - 使用 React Fragment 避免不必要的 DOM 層級
+      - 各個 section 會平行排列，每個代表獨立的內容區塊
     */
-    <section className="w-full relative text-left text-[1.111rem] text-[#000] bg-white">
+    <div className="w-full relative text-left text-[1.111rem] text-[#000] bg-white">
       {/* 歡迎頁面覆蓋層 - 可能包含載入動畫或歡迎訊息 */}
       <WelcomeOverlay />
 
@@ -95,7 +90,7 @@ const HomePage: NextPage = () => {
         - flex justify-center: 水平居中對齊
         - 提供動態視覺效果，吸引用戶注意
       */}
-      <section className="mt-40 flex justify-center">
+      <section className="mt-0 flex justify-center">
         <GameOfLifeLogo />
       </section>
 
@@ -152,7 +147,7 @@ const HomePage: NextPage = () => {
       <section id="contact">
         <ContactForm />
       </section>
-    </section>
+    </div>
   )
 }
 

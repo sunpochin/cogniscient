@@ -40,8 +40,8 @@ const ArticlesPage = () => {
 
   // 渲染頁面結構
   return (
-    // 主要內容區域，使用語義化的 main 標籤
-    <main className="bg-white">
+    // 文章頁面內容區域
+    <div className="bg-white">
       {/* 文章內容區塊 */}
       <section className="py-8 md:py-12 px-4">
         {/* 容器：最大寬度限制並水平居中 */}
@@ -129,7 +129,7 @@ const ArticlesPage = () => {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }
 
