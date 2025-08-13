@@ -62,7 +62,7 @@ Small, consistent changes often lead to the most sustainable results. Focus on p
   const imageUrl = `https://picsum.photos/seed/tech${articleId}/800/400`
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
           {article.title}

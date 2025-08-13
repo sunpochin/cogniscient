@@ -2,6 +2,7 @@
 import NavBar from '../../../components/Navbar' // 導覽列元件
 import MemberDetail from '../../../components/MemberDetail' // 成員詳細資訊元件
 import Link from 'next/link' // Next.js 路由連結
+import Footer from '../../../components/Footer' // 頁尾元件
 
 // 定義頁面 props 類型
 interface MemberPageProps {
@@ -20,7 +21,7 @@ const MemberPage: React.FC<MemberPageProps> = async ({ params }) => {
 
   return (
     // 主要內容區域，統一使用 bg-gray-50 背景
-    <main className="bg-gray-50 min-h-screen">
+    <main className="bg-white min-h-screen">
       {/* 導覽列 */}
       <NavBar />
       
@@ -56,6 +57,7 @@ const MemberPage: React.FC<MemberPageProps> = async ({ params }) => {
           </Link>
         </div>
       </section>
+      <Footer />
     </main>
   )
 }

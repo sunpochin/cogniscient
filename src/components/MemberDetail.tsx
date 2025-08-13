@@ -85,7 +85,7 @@ Beyond her professional achievements, Emily is passionate about diversity in STE
   }?w=400&h=400&fit=crop&crop=face`
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-6">
