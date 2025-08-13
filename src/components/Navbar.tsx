@@ -78,7 +78,7 @@ const NavBar: FC<NavBarType> = ({ className = '' }) => {
         <button
           onClick={toggleMenu} // 點擊時切換選單開關
           aria-label="Open menu" // 無障礙標籤，供螢幕閱讀器使用
-          className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
+          className="mr-10 p-2 rounded-md focus:outline-none ring-2 ring-inset ring-blue-300"
           // 樣式：內邊距、圓角、移除預設 outline、focus 時顯示灰色邊框
         >
           {/* SVG 圖示：漢堡選單 / X 關閉圖示 */}
@@ -103,7 +103,7 @@ const NavBar: FC<NavBarType> = ({ className = '' }) => {
       {/* 手機端下拉選單（條件渲染）*/}
       {isMenuOpen && (
         // 只有在選單開啟時才渲染
-        <div className="md:hidden absolute top-full right-2 w-30 bg-blue-200 shadow-lg z-10 ">
+        <div className="md:hidden absolute top-full right-2 w-30 bg-transparent shadow-lg z-10 mr-12">
           {/* 樣式：大於 md 時隱藏、絕對定位在父元件下方、白色背景、陰影、高層級 */}
           <nav className="flex flex-col items-center space-y-4 py-4">
             {/* 垂直排列、置中對齊、垂直間距、上下內邊距 */}
