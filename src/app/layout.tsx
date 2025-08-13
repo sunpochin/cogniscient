@@ -4,6 +4,8 @@
  * 主要職責是設定 HTML 的基本結構 (<html>, <body>), 載入全域 CSS,
  * 以及設定 MUI 主題 (Theme) 和 Viewport。
  */
+'use client'
+
 import { CssBaseline } from '@mui/material'
 import { ThemeProvider } from '@mui/material/styles'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter'
@@ -11,6 +13,8 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter'
 import './globals.css'
 
 import muiTheme from '../../theme'
+import NavBar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 export default function RootLayout({
   children,
@@ -26,7 +30,11 @@ export default function RootLayout({
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={muiTheme}>
             <CssBaseline />
-            {children}
+            <div className="min-h-screen">
+              <NavBar />
+              <div>{children}</div>
+              <Footer />
+            </div>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

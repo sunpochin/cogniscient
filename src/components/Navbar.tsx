@@ -46,7 +46,7 @@ const NavBar: FC<NavBarType> = ({ className = '' }) => {
   return (
     <Box
       component="header" // 使用語義化的 header HTML 標籤
-      className={`w-full flex justify-end items-center px-4 sm:px-8 py-4 bg-transparent relative ${className}`}
+      className={`w-full flex justify-end items-center px-4 sm:px-8 py-4 bg-white relative ${className}`}
       // 樣式說明：全寬度、flex 佈局、兩端對齊、垂直居中、響應式內邊距、白色背景、相對定位
     >
       {/* 左側：品牌 Logo 區域（佔位用，可以之後加入實際 Logo）*/}

@@ -23,7 +23,6 @@ import { Box } from '@mui/material' // Material-UI 容器元件（保留以防�
 import Image from 'next/image' // Next.js 優化圖片元件
 
 // 匯入導覽和佈局元件
-import NavBar from '../components/Navbar' // 頂部導覽列
 import SideDecoration from '../components/SideDecoration' // 右側裝飾圖案
 import WelcomeOverlay from '../components/WelcomeOverlay' // 歡迎覆蓋層
 import GameOfLifeLogo from '../components/GameOfLifeLogo' // 生命遊戲動畫 Logo
@@ -56,18 +55,9 @@ const HomePage: NextPage = () => {
       - text-[#000]: 黑色文字
       - bg-gray-50: 淺灰色背景，統一全站風格
     */
-    <main className="w-full relative text-left text-[1.111rem] text-[#000] bg-white">
+    <section className="w-full relative text-left text-[1.111rem] text-[#000] bg-white">
       {/* 歡迎頁面覆蓋層 - 可能包含載入動畫或歡迎訊息 */}
       <WelcomeOverlay />
-
-      {/*
-        頁首區域
-        - header: 語義化標籤，表示頁面頂部區域
-        - relative z-10: 確保導覽列顯示在其他元件之上
-      */}
-      <header className="relative z-10">
-        <NavBar />
-      </header>
 
       {/* 未來功能：客戶故事輪播區塊（目前註解掉）*/}
       {/* <section className="mt-80">
@@ -162,7 +152,7 @@ const HomePage: NextPage = () => {
       <section id="contact">
         <ContactForm />
       </section>
-    </main>
+    </section>
   )
 }
 

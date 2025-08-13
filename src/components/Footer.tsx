@@ -2,24 +2,24 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    // 網站底部區域，使用深色背景與主要內容形成對比
+    // Website footer area with dark background contrasting main content
     <footer className="bg-gray-800 text-white py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* 主要內容區域 - 使用 Grid 佈局分為三個欄位 */}
+        {/* Main content area - using Grid layout divided into three columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           
-          {/* 公司資訊欄位 */}
+          {/* Company Information */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Cogniscient</h3>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
-              專業的 AI-UX 顧問公司，致力於透過人工智慧技術提升用戶體驗，幫助企業實現數位轉型目標。
+              Professional AI-UX consulting company dedicated to enhancing user experiences through artificial intelligence technology, helping businesses achieve their digital transformation goals.
             </p>
             <p className="text-gray-300 text-sm">
-              讓科技更人性化，讓體驗更智慧化。
+              Making technology more human, making experiences smarter.
             </p>
           </div>
 
-          {/* 快速連結欄位 */}
+          {/* Quick Links Section */}
           <div>
             <h4 className="text-lg font-medium mb-4">Quick Links</h4>
             <nav className="space-y-2">
@@ -56,7 +56,7 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* 聯絡資訊欄位 */}
+          {/* Contact Information */}
           <div>
             <h4 className="text-lg font-medium mb-4">Contact Info</h4>
             <div className="space-y-3">
@@ -72,10 +72,10 @@ const Footer = () => {
               
               <div className="text-gray-300 text-sm">
                 <p className="font-medium mb-1">Location:</p>
-                <p>Taiwan, Taipei</p>
+                <p>United States</p>
               </div>
 
-              {/* 社群媒體連結 */}
+              {/* Social Media Links */}
               <div className="pt-2">
                 <p className="font-medium mb-2 text-sm">Follow Us:</p>
                 <div className="flex space-x-4">
@@ -112,14 +112,14 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* 版權資訊分隔線 */}
+        {/* Copyright information separator */}
         <div className="border-t border-gray-700 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-300 text-sm mb-2 md:mb-0">
               © {new Date().getFullYear()} Cogniscient. All rights reserved.
             </p>
             
-            {/* 法律連結 */}
+            {/* Legal Links */}
             <div className="flex space-x-6 text-sm">
               <Link 
                 href="/privacy" 

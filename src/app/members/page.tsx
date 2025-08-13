@@ -1,5 +1,4 @@
 // 匯入必要的元件和功能
-import NavBar from '../../components/Navbar' // 導覽列元件
 import Image from 'next/image' // Next.js 優化圖片元件
 import Link from 'next/link' // Next.js 路由連結元件
 
@@ -39,10 +38,7 @@ const MembersPage = () => {
   // 渲染頁面結構
   return (
     // 主要內容區域，使用語義化的 main 標籤
-    <main className="bg-white min-h-screen">
-      {/* 導覽列 */}
-      <NavBar />
-      
+    <main className="bg-white">
       {/* 團隊成員內容區塊 */}
       <section className="py-8 md:py-12 px-4">
         {/* 容器：最大寬度限制並水平居中 */}
