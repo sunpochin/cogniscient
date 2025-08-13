@@ -18,56 +18,56 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x, 22.x]
+        node-version: [20.x]
 
     steps:
-    # 檢出程式碼
-    - name: 檢出程式碼
-      uses: actions/checkout@v4
+      # 檢出程式碼
+      - name: 檢出程式碼
+        uses: actions/checkout@v4
 
-    # 設定 Node.js 環境
-    - name: 設定 Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'yarn'
+      # 設定 Node.js 環境
+      - name: 設定 Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
 
-    # 安裝依賴套件
-    - name: 安裝依賴套件
-      run: yarn install --frozen-lockfile
+      # 安裝依賴套件
+      - name: 安裝依賴套件
+        run: yarn install --frozen-lockfile
 
-    # 執行 ESLint 程式碼檢查
-    - name: 執行 Lint 檢查
-      run: yarn lint
+      # 執行 ESLint 程式碼檢查
+      - name: 執行 Lint 檢查
+        run: yarn lint
 
-    # 執行 TypeScript 型別檢查
-    - name: 執行 TypeScript 檢查
-      run: yarn tsc --noEmit
+      # 執行 TypeScript 型別檢查
+      - name: 執行 TypeScript 檢查
+        run: yarn tsc --noEmit
 
-    # 建置專案
-    - name: 建置專案
-      run: yarn build
+      # 建置專案
+      - name: 建置專案
+        run: yarn build
 
-    # 檢查建置結果
-    - name: 檢查建置結果
-      run: |
-        if [ -d ".next" ]; then
-          echo "✅ 建置成功"
-        else
-          echo "❌ 建置失敗"
-          exit 1
-        fi
+      # 檢查建置結果
+      - name: 檢查建置結果
+        run: |
+          if [ -d ".next" ]; then
+            echo "✅ 建置成功"
+          else
+            echo "❌ 建置失敗"
+            exit 1
+          fi
 
-    # 快取建置結果以供後續步驟使用
-    - name: 快取建置結果
-      uses: actions/cache@v4
-      with:
-        path: |
-          ~/.cache/yarn
-          ${{ github.workspace }}/.next/cache
-        key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
-        restore-keys: |
-          ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
+      # 快取建置結果以供後續步驟使用
+      - name: 快取建置結果
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/yarn
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
 
   # 安全性掃描
   security-scan:
@@ -75,21 +75,21 @@ jobs:
     needs: build-and-test
 
     steps:
-    - name: 檢出程式碼
-      uses: actions/checkout@v4
+      - name: 檢出程式碼
+        uses: actions/checkout@v4
 
-    - name: 設定 Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20.x'
-        cache: 'yarn'
+      - name: 設定 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'yarn'
 
-    - name: 安裝依賴套件
-      run: yarn install --frozen-lockfile
+      - name: 安裝依賴套件
+        run: yarn install --frozen-lockfile
 
-    - name: 執行 yarn audit 安全性檢查
-      run: yarn audit --level high
-      continue-on-error: true
+      - name: 執行 yarn audit 安全性檢查
+        run: yarn audit --level high
+        continue-on-error: true
 
   # 部署到預覽環境（僅 PR）
   deploy-preview:
