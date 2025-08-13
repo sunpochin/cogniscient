@@ -25,7 +25,7 @@ const HomePage: NextPage = () => {
   return (
     <Box className="w-full relative text-left text-[1.111rem] text-[#000] bg-white font-[Montserrat]">
       <WelcomeOverlay />
-      <div className="">
+      <div className="relative z-10">
         <NavBar />
       </div>
       {/* <Box className="mt-80">
