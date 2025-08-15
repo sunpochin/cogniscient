@@ -1,12 +1,12 @@
 /**
  * Cogniscient 首頁元件
- * 
+ *
  * 功能描述：
  * - 企業官網的主要入口頁面
  * - 展示公司簡介、服務項目、團隊介紹等核心內容
  * - 使用模組化設計，將不同區塊分為獨立元件
  * - 支援響應式設計，適配各種螢幕尺寸
- * 
+ *
  * 技術特色：
  * - 使用 Next.js App Router 架構
  * - 語義化 HTML 標籤提升 SEO 效果
@@ -19,7 +19,6 @@
 
 // 匯入類型和基礎元件
 import type { NextPage } from 'next' // Next.js 頁面元件類型
-import { Box } from '@mui/material' // Material-UI 容器元件（保留以防需要）
 import Image from 'next/image' // Next.js 優化圖片元件
 
 // 匯入導覽和佈局元件
@@ -46,7 +45,7 @@ import ContactForm from '../components/ContactForm' // 聯絡表單區塊
  */
 const HomePage: NextPage = () => {
   return (
-    /* 
+    /*
       主要內容容器
       - main: 語義化標籤，標示頁面主要內容
       - w-full: 佔滿整個寬度
@@ -59,8 +58,8 @@ const HomePage: NextPage = () => {
     <main className="w-full relative text-left text-[1.111rem] text-[#000] bg-white">
       {/* 歡迎頁面覆蓋層 - 可能包含載入動畫或歡迎訊息 */}
       <WelcomeOverlay />
-      
-      {/* 
+
+      {/*
         頁首區域
         - header: 語義化標籤，表示頁面頂部區域
         - relative z-10: 確保導覽列顯示在其他元件之上
@@ -68,13 +67,13 @@ const HomePage: NextPage = () => {
       <header className="relative z-10">
         <NavBar />
       </header>
-      
+
       {/* 未來功能：客戶故事輪播區塊（目前註解掉）*/}
       {/* <section className="mt-80">
         <ClientStoriesCarousel />
       </section> */}
 
-      {/* 
+      {/*
         右側裝飾圖案
         - z-1: 較低的層級，作為背景裝飾
         - 提供視覺美感，不影響內容閱讀
@@ -82,8 +81,8 @@ const HomePage: NextPage = () => {
       <div className="z-1">
         <SideDecoration />
       </div>
-      
-      {/* 
+
+      {/*
         公司 Logo
         - absolute: 絕對定位，固定在頁面左上角
         - top-[3rem] left-[1rem]: 精確的位置設定
@@ -98,8 +97,8 @@ const HomePage: NextPage = () => {
         alt="Cogniscient company logo" // 無障礙替代文字
         src="/cogniscient.png"
       />
-      
-      {/* 
+
+      {/*
         Game of Life Logo 區塊
         - mt-40: 頂部間距
         - flex justify-center: 水平居中對齊
@@ -108,8 +107,8 @@ const HomePage: NextPage = () => {
       <section className="mt-40 flex justify-center">
         <GameOfLifeLogo />
       </section>
-      
-      {/* 
+
+      {/*
         公司簡介區塊
         - mt-40: 與上方區塊的間距
         - ml-20 mr-14: 左右邊距，創造視覺呼吸感
@@ -118,8 +117,8 @@ const HomePage: NextPage = () => {
       <section className="mt-40 ml-20 mr-14 relative z-10">
         <AboutCogniscient />
       </section>
-      
-      {/* 
+
+      {/*
         AI-UX 介紹區塊
         - w-3/4: 寬度為父容器的 3/4
         - ml-auto: 左邊距自動，實現右對齊效果
@@ -128,18 +127,18 @@ const HomePage: NextPage = () => {
       <section className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
         <WhatIsAIUX />
       </section>
-      
+
       {/* 目標客群介紹區塊 - 左對齊設計 */}
       <section className="mt-20 ml-20 mr-14 relative z-10">
         <WhoAreAIUXFor />
       </section>
-      
+
       {/* 開始旅程區塊 - 右對齊設計 */}
       <section className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
         <StartYourJourney />
       </section>
-      
-      {/* 
+
+      {/*
         服務項目區塊
         - id="services": 提供錨點連結，支援導覽列直接跳轉
         - 重要的商業資訊區塊
@@ -147,13 +146,13 @@ const HomePage: NextPage = () => {
       <section id="services" className="mt-20 ml-20 mr-14 relative z-10">
         <OurServices />
       </section>
-      
+
       {/* 團隊介紹區塊 - 右對齊設計 */}
       <section className="mt-20 w-3/4 ml-auto mr-14 relative z-10">
         <WhoAreWe />
       </section>
-      
-      {/* 
+
+      {/*
         聯絡表單區塊
         - id="contact": 提供錨點連結，支援導覽列直接跳轉
         - 放在頁面底部，引導用戶進行互動

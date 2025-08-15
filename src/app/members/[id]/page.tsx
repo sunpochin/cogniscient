@@ -1,6 +1,6 @@
 // 匯入必要的元件
-import NavBar from '../../../components/Navbar' // 導覽列元件
-import MemberDetail from '../../../components/MemberDetail' // 成員詳細資訊元件
+import NavBar from '@/components/Navbar' // 導覽列元件
+import MemberDetail from '@/components/MemberDetail' // 成員詳細資訊元件
 import Link from 'next/link' // Next.js 路由連結
 
 // 定義頁面 props 類型

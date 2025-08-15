@@ -1,135 +1,128 @@
 # Cogniscient
 
-![Cogniscient Logo](./public/cogniscient.png)
+## 網站
 
-> A consultancy working at the intersection of artificial intelligence and human-centered design.
+https://cogniscient.vercel.app/
 
-Cogniscient is a modern web application built with Next.js that showcases AI-UX consulting services. We apply deep expertise in cognitive science, machine learning, computer science, and mechanical engineering to help craft interactive AI-powered products that are intuitive, trustworthy, and efficient.
+> 一家致力於人工智慧與人性化設計交集的顧問公司。
 
-## ✨ Features
+Cogniscient 是一個使用 Next.js 建置的現代化網站應用程式，旨在展示 AI-UX 顧問服務。我們運用在認知科學、機器學習、電腦科學和機械工程領域的深厚專業知識，協助打造兼具直覺、信賴和效率的互動式 AI 產品。
 
-- **🎨 Modern UI/UX**: Built with Material-UI and Tailwind CSS
-- **📱 Responsive Design**: Optimized for desktop and mobile devices
-- **🚀 Fast Performance**: Server-side rendering with Next.js
-- **♿ Accessibility**: WCAG compliant components
-- **🔧 TypeScript**: Full type safety
-- **🎯 Interactive Elements**: Game of Life animation and contact forms
+## ✨ 功能亮點
 
-## 🛠️ Tech Stack
+- **🎨 現代化 UI/UX**：採用 Material-UI 和 Tailwind CSS 建構
+- **📱 響應式設計**：針對桌面和行動裝置進行優化
+- **🚀 極速性能**：透過 Next.js 實現伺服器端渲染 (SSR)
+- **♿ 無障礙設計**：元件符合 WCAG 無障礙網頁內容指引
+- **🔧 TypeScript**：完整的型別安全
+- **🎯 互動元素**：生命遊戲動畫和聯絡表單
 
-- **Framework**: [Next.js 15.3.1](https://nextjs.org/)
-- **Language**: [TypeScript 5.8.3](https://www.typescriptlang.org/)
-- **Styling**:
+## 🛠️ 技術棧
+
+- **框架**：[Next.js 15.3.1](https://nextjs.org/)
+- **語言**：[TypeScript 5.8.3](https://www.typescriptlang.org/)
+- **樣式**：
   - [Tailwind CSS 4.1.3](https://tailwindcss.com/)
   - [Material-UI 7.0.2](https://mui.com/)
-- **State Management**: [Redux 5.0.1](https://redux.js.org/)
-- **Forms**: [React Hook Form 7.62.0](https://react-hook-form.com/)
-- **Routing**: [React Router DOM 7.5.0](https://reactrouter.com/)
+- **狀態管理**：[Redux 5.0.1](https://redux.js.org/)
+- **表單**：[React Hook Form 7.62.0](https://react-hook-form.com/)
+- **路由**：[React Router DOM 7.5.0](https://reactrouter.com/)
 
-## 📋 Prerequisites
+## 📋 環境要求
 
-- **Node.js**: Version 20.0.0 or higher ([Download](https://nodejs.org/en/download/))
-- **Yarn**: Package manager (recommended)
+- **Node.js**：版本 20.0.0 或更高 ([下載](https://nodejs.org/en/download/))
+- **Yarn**：套件管理器 (建議使用)
 
-## 🚀 Quick Start
+## 🚀 快速入門
 
-### 1. Clone the repository
+### 1. 複製儲存庫
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:sunpochin/cogniscient.git
 cd cogniscient
 ```
 
-### 2. Install dependencies
+### 2. 安裝依賴
 
 ```bash
 yarn install
 ```
 
-### 3. Run the development server
+### 3. 啟動開發伺服器
 
 ```bash
 yarn dev
 ```
 
-### 4. Open your browser
+### 4. 開啟您的瀏覽器
 
-Visit [http://localhost:3000](http://localhost:3000) to see the application.
+訪問 [http://localhost:3000](http://localhost:3000) 查看應用程式。
 
-## 📁 Project Structure
+## 📁 專案結構
 
 ```
 src/
-├── app/                    # Next.js App Router pages
-│   ├── articles/          # Articles section
-│   ├── items/             # Items/portfolio section
-│   ├── members/           # Team members section
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Home page
-├── components/            # Reusable React components
-│   ├── AboutCogniscient.tsx
-│   ├── ContactForm.tsx
-│   ├── GameOfLifeLogo.tsx
-│   ├── Navbar.tsx
-│   ├── SideDecoration.tsx
+├── app/                    # Next.js App Router 頁面
+│   ├── articles/          # 文章區塊
+│   ├── members/           # 團隊成員區塊
+│   ├── layout.tsx         # 根佈局 (Root Layout)
+│   └── page.tsx           # 首頁 (Homepage)
+├── components/            # 可重複使用的 React 元件
+│   ├── AboutCogniscient.tsx # 「關於 Cogniscient」元件
+│   ├── ContactForm.tsx    # 聯絡表單元件
+│   ├── GameOfLifeLogo.tsx # 生命遊戲 Logo 動畫元件
+│   ├── Navbar.tsx         # 導覽列元件
+│   ├── SideDecoration.tsx # 側邊裝飾元件
 │   └── ...
-├── pages/api/             # API routes
-├── stores/                # Redux store configuration
-└── globals.css            # Global styles
+├── pages/api/             # API 路由 (Next.js API Routes)
+├── stores/                # Redux store 狀態管理設定
+└── globals.css            # 全域 CSS 樣式
 ```
 
-## 🧪 Available Scripts
+## 🧪 可用腳本
 
 ```bash
-# Development
-yarn dev          # Start development server
-yarn build        # Build for production
-yarn start        # Start production server
-yarn lint         # Run ESLint
+# 開發
+yarn dev          # 啟動開發伺服器
+yarn build        # 建置生產版本
+yarn start        # 啟動生產伺服器
+yarn lint         # 執行 ESLint 檢查
 ```
 
-## 🚀 Deployment
+## 🚀 部署
 
-### Vercel (Recommended)
+### Vercel
 
-1. Push your code to GitHub
-2. Connect your repository to [Vercel](https://vercel.com)
-3. Deploy automatically on every push to main
+1.  將您的程式碼推送到 GitHub
+2.  將您的儲存庫連接到 [Vercel](https://vercel.com)
+3.  每次推送到 `main` 分支時自動部署
 
-### Manual Build
+### 手動建置
 
 ```bash
 yarn build
 yarn start
 ```
 
-## 🎨 Design System
+## 🎨 設計系統
 
-- **Colors**: Custom color palette with AI/tech theme
-- **Typography**: Montserrat font family for modern, clean look
-- **Components**: Material-UI components with Tailwind utilities
-- **Responsive**: Mobile-first approach with breakpoints
+- **顏色**：以 AI/科技為主題的自訂調色盤
+- **字體**：使用 Montserrat 字體家族，打造現代、簡潔的外觀
+- **元件**：結合 Material-UI 元件和 Tailwind 的功能類
+- **響應式**：採用行動優先的方法，並設定斷點
 
-## 🤝 Contributing
+## 📄 授權
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+本專案採用 MIT 授權 - 詳情請見 [LICENSE](LICENSE) 檔案。
 
-## 📄 License
+## 📞 聯絡方式
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+若有關於本專案或 Cogniscient 服務的問題：
 
-## 📞 Contact
-
-For questions about this project or Cogniscient services:
-
-- Website: [[https://cogniscient.vercel.app/](https://cogniscient.vercel.app/)]
-- Email: [sunpochin@gmail.com]
-- LinkedIn: [[LinkedIn Profile](https://www.linkedin.com/in/sunpochin/)]
+- 網站：[[https://cogniscient.vercel.app/](https://cogniscient.vercel.app/)]
+- 電子郵件：[sunpochin@gmail.com]
+- LinkedIn：[[LinkedIn Profile](https://www.linkedin.com/in/sunpochin/)]
 
 ---
 
-Built with ❤️ using Next.js and modern web technologies.
+以 ❤️ 使用 Next.js 和現代網頁技術建置。
