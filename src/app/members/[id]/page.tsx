@@ -1,55 +1,53 @@
-// 匯入必要的元件
-import NavBar from '../../../components/Navbar' // 導覽列元件
-import MemberDetail from '../../../components/MemberDetail' // 成員詳細資訊元件
-import Link from 'next/link' // Next.js 路由連結
+// 匯入必要的元件和資料
+import NavBar from '@/components/Navbar'
+import MemberDetail from '@/components/MemberDetail'
+import Link from 'next/link'
+import { members } from '@/data/members'
+import { notFound } from 'next/navigation'
 
 // 定義頁面 props 類型
-interface MemberPageProps {
-  params: Promise<{ id: string }>
-}
+const MemberPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params
+  const memberId = parseInt(id, 10)
+  const member = members.find(m => m.id === memberId)
 
-/**
- * 成員詳細頁面
- * 功能：顯示單一成員的詳細資訊
- * - 統一背景色設計
- * - 包含返回成員列表的連結
- */
-const MemberPage: React.FC<MemberPageProps> = async ({ params }) => {
-  const resolvedParams = await params
-  const memberId = resolvedParams.id
+  // 如果找不到對應的成員，顯示 404 頁面
+  if (!member) {
+    notFound()
+  }
 
   return (
-    // 主要內容區域，統一使用 bg-gray-50 背景
+    // 主要內容區域
     <main className="bg-white min-h-screen">
       {/* 導覽列 */}
       <NavBar />
-      
-      {/* 成員詳細內容 */}
+
+      {/* 成員詳細內容，傳入完整的 member 物件 */}
       <section className="py-8">
-        <MemberDetail memberId={memberId} />
+        <MemberDetail member={member} />
       </section>
-      
+
       {/* 返回上一頁連結 */}
       <section className="pb-12 px-4">
         <div className="max-w-4xl mx-auto">
-          <Link 
+          <Link
             href="/members"
             className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors duration-200"
             aria-label="Back to team members page"
           >
             {/* 左箭頭圖標 */}
-            <svg 
-              className="mr-2 w-4 h-4" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="mr-2 w-4 h-4"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M15 19l-7-7 7-7" 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
               />
             </svg>
             Back to Team Members
@@ -61,3 +59,10 @@ const MemberPage: React.FC<MemberPageProps> = async ({ params }) => {
 }
 
 export default MemberPage
+
+// (可選) 產生靜態頁面，有利於 SEO 和性能
+export async function generateStaticParams() {
+  return members.map(member => ({
+    id: member.id.toString(),
+  }))
+}
