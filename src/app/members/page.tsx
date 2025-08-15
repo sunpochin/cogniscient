@@ -54,7 +54,7 @@ const MembersPage = () => {
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 w-full sm:w-80 md:w-72 lg:w-80 max-w-sm flex-shrink-0"
               >
                 {/* 成員照片區域 */}
-                <div className="relative h-48 w-full">
+                <div className="relative h-100 w-full">
                   <Image
                     src={member.imageUrl}
                     alt={`Portrait of ${member.name}`} // 無障礙友善的圖片描述
