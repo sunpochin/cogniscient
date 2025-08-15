@@ -6,16 +6,9 @@ import { members } from '@/data/members'
 import { notFound } from 'next/navigation'
 
 // 定義頁面 props 類型
-interface MemberPageProps {
-  params: { id: string }
-}
-
-/**
- * 成員詳細頁面
- * 功能：根據 URL 的 id，從資料來源找到對應的成員並顯示其詳細資訊
- */
-const MemberPage: React.FC<MemberPageProps> = ({ params }) => {
-  const memberId = parseInt(params.id, 10)
+const MemberPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params
+  const memberId = parseInt(id, 10)
   const member = members.find(m => m.id === memberId)
 
   // 如果找不到對應的成員，顯示 404 頁面
