@@ -9,7 +9,7 @@ Cogniscient is a modern web application built with Next.js that showcases AI-UX 
 ## ✨ Features
 
 - **🎨 Modern UI/UX**: Built with Material-UI and Tailwind CSS
-- **📱 Responsive Design**: Optimized for desktop and mobile devices  
+- **📱 Responsive Design**: Optimized for desktop and mobile devices
 - **🚀 Fast Performance**: Server-side rendering with Next.js
 - **♿ Accessibility**: WCAG compliant components
 - **🔧 TypeScript**: Full type safety
@@ -19,7 +19,7 @@ Cogniscient is a modern web application built with Next.js that showcases AI-UX 
 
 - **Framework**: [Next.js 15.3.1](https://nextjs.org/)
 - **Language**: [TypeScript 5.8.3](https://www.typescriptlang.org/)
-- **Styling**: 
+- **Styling**:
   - [Tailwind CSS 4.1.3](https://tailwindcss.com/)
   - [Material-UI 7.0.2](https://mui.com/)
 - **State Management**: [Redux 5.0.1](https://redux.js.org/)
@@ -34,22 +34,26 @@ Cogniscient is a modern web application built with Next.js that showcases AI-UX 
 ## 🚀 Quick Start
 
 ### 1. Clone the repository
+
 ```bash
 git clone <repository-url>
 cd cogniscient
 ```
 
 ### 2. Install dependencies
+
 ```bash
 yarn install
 ```
 
 ### 3. Run the development server
+
 ```bash
 yarn dev
 ```
 
 ### 4. Open your browser
+
 Visit [http://localhost:3000](http://localhost:3000) to see the application.
 
 ## 📁 Project Structure
@@ -58,7 +62,7 @@ Visit [http://localhost:3000](http://localhost:3000) to see the application.
 src/
 ├── app/                    # Next.js App Router pages
 │   ├── articles/          # Articles section
-│   ├── items/             # Items/portfolio section  
+│   ├── items/             # Items/portfolio section
 │   ├── members/           # Team members section
 │   ├── layout.tsx         # Root layout
 │   └── page.tsx           # Home page
@@ -87,11 +91,13 @@ yarn lint         # Run ESLint
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
+
 1. Push your code to GitHub
 2. Connect your repository to [Vercel](https://vercel.com)
 3. Deploy automatically on every push to main
 
 ### Manual Build
+
 ```bash
 yarn build
 yarn start
@@ -120,9 +126,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions about this project or Cogniscient services:
 
-- Website: [Your Website URL]
-- Email: [Your Contact Email]
-- LinkedIn: [Your LinkedIn Profile]
+- Website: [[https://cogniscient.vercel.app/](https://cogniscient.vercel.app/)]
+- Email: [sunpochin@gmail.com]
+- LinkedIn: [[LinkedIn Profile](https://www.linkedin.com/in/sunpochin/)]
 
 ---
 

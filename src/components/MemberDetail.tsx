@@ -1,10 +1,14 @@
+// 導入 Next.js 的 Image 元件，用於優化圖片顯示
 import Image from 'next/image'
 
+// 定義 MemberDetail 元件的 props 介面
 interface MemberDetailProps {
-  memberId: string
+  memberId: string // 成員的 ID
 }
 
+// MemberDetail 元件：顯示特定成員的詳細資訊
 const MemberDetail: React.FC<MemberDetailProps> = ({ memberId }) => {
+  // 定義一個靜態的成員資料物件，以成員 ID 為 key
   const memberData: Record<
     string,
     {
@@ -74,7 +78,10 @@ Beyond her professional achievements, Emily is passionate about diversity in STE
     },
   }
 
+  // 根據傳入的 memberId 獲取對應的成員資料，如果找不到則預設為 ID '1' 的成員
   const member = memberData[memberId] || memberData['1']
+
+  // 使用 Unsplash API 根據成員 ID 動態生成頭像圖片 URL
   // 使用專門的人臉圖片 API
   const imageUrl = `https://images.unsplash.com/photo-${
     memberId === '1'
@@ -84,32 +91,39 @@ Beyond her professional achievements, Emily is passionate about diversity in STE
       : '1573496359142-b8d87734a5a2'
   }?w=400&h=400&fit=crop&crop=face`
 
+  // 返回 JSX 結構來渲染頁面
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-8">
+        {/* 頭像、姓名和職位區塊 */}
         <div className="text-center mb-8">
           <div className="flex justify-center mb-6">
+            {/* 成員頭像 */}
             <Image
               src={imageUrl}
               alt={member.name}
               width={300}
               height={300}
               className="rounded-full shadow-lg object-cover"
-              priority
-              unoptimized
+              priority // 優先加載此圖片
+              unoptimized // 如果圖片來源是外部的，建議使用此屬性
             />
           </div>
 
+          {/* 成員姓名 */}
           <h1 className="text-4xl font-bold text-gray-800 mb-2">
             {member.name}
           </h1>
 
+          {/* 成員職位 */}
           <h2 className="text-xl text-blue-600 font-medium mb-8">
             {member.role}
           </h2>
         </div>
 
+        {/* 主要內容區塊 */}
         <div className="prose prose-lg max-w-none">
+          {/* 經驗、學歷、成就摘要區塊 */}
           <div className="bg-gray-50 rounded-lg p-6 mb-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
               <div>
@@ -129,6 +143,7 @@ Beyond her professional achievements, Emily is passionate about diversity in STE
             </div>
           </div>
 
+          {/* 成員簡介，將換行符轉換為段落 */}
           {member.bio.split('\n\n').map((paragraph, index) => (
             <p key={index} className="text-gray-700 leading-relaxed mb-6">
               {paragraph}
@@ -140,4 +155,5 @@ Beyond her professional achievements, Emily is passionate about diversity in STE
   )
 }
 
+// 導出 MemberDetail 元件
 export default MemberDetail

@@ -19,37 +19,37 @@ const MemberPage: React.FC<MemberPageProps> = async ({ params }) => {
   const memberId = resolvedParams.id
 
   return (
-    // 主要內容區域，統一使用 bg-gray-50 背景
+    // 主要內容區域
     <main className="bg-white min-h-screen">
       {/* 導覽列 */}
       <NavBar />
-      
+
       {/* 成員詳細內容 */}
       <section className="py-8">
         <MemberDetail memberId={memberId} />
       </section>
-      
+
       {/* 返回上一頁連結 */}
       <section className="pb-12 px-4">
         <div className="max-w-4xl mx-auto">
-          <Link 
+          <Link
             href="/members"
             className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors duration-200"
             aria-label="Back to team members page"
           >
             {/* 左箭頭圖標 */}
-            <svg 
-              className="mr-2 w-4 h-4" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="mr-2 w-4 h-4"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M15 19l-7-7 7-7" 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
               />
             </svg>
             Back to Team Members
